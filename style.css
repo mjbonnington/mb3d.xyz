@@ -1,4 +1,18 @@
 @font-face {
+	font-family: 'Charter';
+	src: url('fonts/charter_regular-webfont.woff') format('woff');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Charter';
+	src: url('fonts/charter_italic-webfont.woff') format('woff');
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
 	font-family: 'Fira Sans';
 	src: url('fonts/FiraSans-UltraLight.woff') format('woff');
 	font-style: normal;
@@ -19,11 +33,6 @@
 	font-weight: 700;
 }
 
-@font-face {
-	font-family: 'Charter';
-	src: url('fonts/charter_italic-webfont.woff') format('woff');
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -33,8 +42,9 @@
 body {
 	background: #111;
 	color: #ccc;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Charter', serif;
 	font-size: 12pt;
+	letter-spacing: .01em;
 }
 
 a:link {
@@ -58,20 +68,48 @@ a:hover {
 
 a.tag {
 	display: inline-block;
-	margin: 2px;
+	margin: 2px auto;
 	padding: 4px;
 	border: none;
 	border-radius: 4px;
 	/*overflow: hidden;*/
 	white-space: nowrap;
-	background: #789;
-	color: #333;
-	font-size: 8pt;
+	background: #79b;
+	color: #000;
+	/*opacity: 0.75;*/
+	font-size: 80%;
+	/*font-weight: 700;*/
 }
 
 a.tag:hover {
-	background: #abc;
+	background: #ccc;
+	/*opacity: 1;*/
 	text-decoration: none;
+}
+
+a.sw {
+	background: #468;
+	font-style: italic;
+}
+
+h1.title {
+	margin-top: 2em;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18pt;
+	letter-spacing: .05em;
+	line-height: 1em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h2.subtitle {
+	font-family: 'Charter', serif;
+	font-style: italic;
+	font-size: 11pt;
+	letter-spacing: .05em;
+	text-transform: lowercase;
+	text-align: center;
 }
 
 pre {
@@ -88,15 +126,36 @@ video {
 	height: auto;
 }
 
+hr {
+	margin: 12px 0;
+	border: 0;
+	height: 1px;
+	background: #333;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 96px 24px;
+	padding-top: 48px;
+	color: #999;
+	background-color: #444;
+}
+
 .header-compact {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/*height: 56px;*/
-	padding: 12px 24px;
+	padding: 16px 24px;
 	color: #999;
 	background-color: #444;
 }
+
+/*.header-compact img {
+	vertical-align: bottom;
+}*/
 
 .header-menu {
 	/*display: inline-block;*/
@@ -121,10 +180,62 @@ video {
 	margin-right: 0;
 }
 
-.header-menu > li {
-	list-style: none;
-	display: inline;
-	margin: 0 0.5em;
+.section-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.body-text {
+	max-width: 720px;
+	padding: 64px 24px;
+}
+
+.body-text p {
+	margin-bottom: 0.75em;
+}
+
+.body-text p:last-of-type {
+	margin-bottom: 0;
+}
+
+.video-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+}
+
+.video-description {
+	position: relative;
+	max-width: 720px;
+	padding: 48px 24px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 10pt;
+}
+
+.offset-tc {
+	margin-left: 24px;  /* Make space for timecode */
+}
+
+.timecode {
+	position: absolute;
+	left: -1em;
+}
+
+.job-details {
+	margin-bottom: 1em;
+	color: #999;
+	font-size: 8pt;
+}
+
+.field {
+	/*position: absolute;
+	left: 0;*/
+	font-weight: bold;
+	text-align: right;
 }
 
 /*.gallery-wrapper {
@@ -159,6 +270,7 @@ video {
 
 .gallery-item img {
 	/*position: absolute;*/
+	/*z-index: -1;*/
 	width: 100%;
 	display: block;
 }
@@ -169,6 +281,7 @@ video {
 
 .text-wrapper {
 	position: absolute;
+	/*z-index: 1;*/
 	top: 0;
 	width: 100%;
 	height: 100%;
@@ -213,13 +326,50 @@ video {
 	background-color: #444;*/
 }
 
-.footer {
+.footer-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 80px 24px;
 	color: #666;
 	background-color: #222;
 }
 
+.footer {
+	max-width: 480px;
+	padding: 80px 24px;
+	font-size: 10pt;
+}
+
+.social-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.social-icons img {
+	margin: 0 8px;
+	vertical-align: bottom;  /* Remove space below baseline */
+}
+
+.colophon {
+	margin: 18px 0;
+	text-align: left;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.colophon p {
+	margin-bottom: 0.75em;
+}
+
+.colophon p:last-of-type {
+	margin-bottom: 0;
+}
+
+.copyright {
+	text-align: center;
+	font-family: 'Charter', serif;
+	font-style: normal;
+	letter-spacing: .05em;
+}
