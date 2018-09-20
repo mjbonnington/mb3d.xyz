@@ -69,6 +69,11 @@ body {
 	letter-spacing: .01em;
 }
 
+/*.page {
+	display: flex;
+	flex-wrap: nowrap;
+}*/
+
 a:link {
 	color: #adc0cb;
 	text-decoration: none;
@@ -79,13 +84,13 @@ a:visited {
 	text-decoration: none;
 }
 
-a:active {
-	text-decoration: none;
-}
-
 a:hover {
 	color: #e8f0f6;
 	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: none;
 }
 
 a.tag {
@@ -224,10 +229,6 @@ hr {
 	align-items: center;
 }
 
-/*.section-wrapper * {
-	border: 1px solid red;
-}*/
-
 .body-text {
 	max-width: 720px;
 	padding: 64px 24px;
@@ -239,6 +240,10 @@ hr {
 
 .body-text p:last-of-type {
 	margin-bottom: 0;
+}
+
+.body-text span.first-word {
+	text-transform: uppercase;
 }
 
 /*.video-description {
