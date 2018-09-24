@@ -13,20 +13,6 @@
 }
 
 @font-face {
-	font-family: 'Charter';
-	src: url('fonts/charter_regular-webfont.woff') format('woff');
-	font-style: normal;
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: 'Charter';
-	src: url('fonts/charter_italic-webfont.woff') format('woff');
-	font-style: italic;
-	font-weight: 400;
-}
-
-@font-face {
 	font-family: 'Fira Sans';
 	src: url('fonts/FiraSans-UltraLight.woff') format('woff');
 	font-style: normal;
@@ -124,26 +110,6 @@ a.tag:hover {
 	text-decoration: none;
 }
 
-h1.title {
-	margin-top: 2em;
-	font-family: 'Fira Sans', sans-serif;
-	font-weight: 400;
-	font-size: 18pt;
-	letter-spacing: .05em;
-	line-height: 1.25em;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-h2.subtitle {
-	font-family: 'Modum', serif;
-	font-style: italic;
-	font-size: 11pt;
-	letter-spacing: .05em;
-	text-transform: lowercase;
-	text-align: center;
-}
-
 pre {
 	background: #abc;
 }
@@ -199,6 +165,26 @@ hr {
 	border: 1px solid white;
 }*/
 
+.header .title {
+	margin-top: 2em;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18pt;
+	letter-spacing: .05em;
+	line-height: 1.25em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.header .subtitle {
+	font-family: 'Modum', serif;
+	font-style: italic;
+	font-size: 11pt;
+	letter-spacing: .05em;
+	text-transform: lowercase;
+	text-align: center;
+}
+
 .header-menu {
 	white-space: nowrap;
 	font-family: 'Fira Sans', sans-serif;
@@ -231,7 +217,8 @@ hr {
 
 .body-text {
 	max-width: 720px;
-	padding: 64px 24px;
+	margin: 40px 0;
+	padding: 24px;
 }
 
 .body-text p {
@@ -246,14 +233,6 @@ hr {
 	text-transform: uppercase;
 }
 
-/*.video-description {
-	position: relative;
-	max-width: 720px;
-	padding: 48px 24px;
-	font-family: 'Fira Sans', sans-serif;
-	font-size: 10pt;
-}*/
-
 .video-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -264,8 +243,9 @@ hr {
 
 .video-description {
 	position: relative;
+	margin: 40px 0;
+	padding: 24px;
 	max-width: 720px;
-	padding: 64px 24px;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 10pt;
 }
@@ -293,6 +273,11 @@ hr {
 	margin-bottom: 0.25em;
 }
 
+/*.tags {
+	width: 100%;
+	border: 1px solid red;
+}*/
+
 .field {
 	/*position: absolute;
 	left: 0;*/
@@ -301,20 +286,22 @@ hr {
 	color: #888;
 }
 
+/*.title-wrapper {
+	
+}*/
+
 /*.gallery-wrapper {
-	display: flex;
+	
 }*/
 
 .gallery {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
 }
 
 .gallery-item {
-	/*display: block;*/
 	position: relative;
+	min-width: 180px;
 	max-width: 720px;
 	background: #222;
 	text-decoration: none;
@@ -332,17 +319,11 @@ hr {
 }
 
 .gallery-item img {
-	/*position: absolute;*/
-	/*z-index: -1;*/
 	width: 100%;
 	display: block;
 }
  
-/*.gallery-item:hover img {
-	border: 16px solid #fff;
-}*/
-
-.text-wrapper {
+.gallery-item-title {
 	position: absolute;
 	/*z-index: 1;*/
 	top: 0;
@@ -357,16 +338,14 @@ hr {
 	color: #fff;
 }
 
-.video-overlay {
-	/*max-width: 672px;
-	max-height: 378px;*/
+.video-title {
 	padding: 48px 12px 0;
 	/*border: 12px solid #fff;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	font-size: 25pt;
+	font-size: 20pt;
 	color: #fff;
 	opacity: 0.75;
 }
@@ -449,4 +428,55 @@ hr {
 	font-family: 'Modum', serif;
 	font-style: normal;
 	letter-spacing: .05em;
+}
+
+
+/* Tablet Styles - Gallery */
+@media only screen and (min-width: 481px) and (max-width: 1280px) {
+	.gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Desktop Styles - Gallery */
+@media only screen and (min-width: 1281px) {
+	.gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (min-width: 481px) {
+	.gallery-item-title {
+		font-size: 15pt;
+	}
+
+	.video-title {
+		font-size: 25pt;
+	}
+}
+
+/* Desktop Styles - Other */
+@media only screen and (min-width: 961px) {
+	.body-text {
+		margin: 40px 24px;
+		border: 1px solid #333;
+	}
+
+	.section-wrapper {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.video-description {
+		margin: 40px 24px;
+	}
+
+	.tags {
+		width: 200px;
+
+	}
+
+	.job-details > li {
+		display: block;
+	}
 }
