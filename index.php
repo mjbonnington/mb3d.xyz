@@ -19,32 +19,40 @@ $page_key = getRef($_SESSION["prev_page_key"], $db->pages->page);
 ?>
 <!DOCTYPE html>
 <html lang='en'>
+	<head>
+		<meta charset='UTF-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+		<link rel='stylesheet' href='style.css'/>
+		<link rel='icon' href='images/favicon.png' type='image/png'/>
 
-<head>
-	<meta charset='UTF-8'/>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
-	<link rel='stylesheet' href='style.css'/>
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,400,700'>
+		<title><?php getPageTitle($rootpage, $subpage, $query); ?></title>
+	</head>
 
-<?php getMetaTags(); ?>
+	<body>
+		<div class='page'>
 
-	<title><?php getPageTitle($rootpage, $subpage, $query); ?></title>
-</head>
-
-<body>
-	<div class='row'>
-		<div class='col-12 col-s-12 header'>
-			<a id='logo' href='<?php echo ($r) ? "/" : "index.php"; ?>'><span><?php getTitle(); ?></span></a>
-		</div>
-	</div>
+<?php createMenu($p); ?>
 
 <?php includePage($p); ?>
 
-	<div class='row'>
-		<div class='col-12 col-s-12 footer'>
-			<p>&copy; <?php echo $today["year"] . " "; getTitle(); createFooterLinks($db->pages->page); ?></p>
-		</div>
-	</div>
-</body>
+			<footer class='footer-wrapper'>
+				<div class='footer'>
+					<div class='social-icons'>
+						<a href='mailto:mike@mb3d.xyz'><img src='images/icon-email-grey.png' width='32' alt='Email icon'/></a>
+						<a href='https://vimeo.com/mjbonnington' target='_blank'><img src='images/icon-vimeo-grey.png' width='32' alt='Vimeo icon'/></a>
+						<a href='https://www.linkedin.com/in/mjbonnington/' target='_blank'><img src='images/icon-linkedin-grey.png' width='32' alt='LinkedIn icon'/></a>
+					</div>
+					<div class='colophon'>
+						<p><b>mb3d.xyz</b> is the website of Michael Bonnington, a London-based visual effects artist and technologist.</p>
+						<p>Site design and development by Michael Bonnington.</p>
+						<!-- <?php createFooterLinks($db->page); ?> -->
+					</div>
+					<div class='copyright'>
+						<p>&copy; MMXIX</p>
+					</div>
+				</div>
+			</footer>
 
+		</div>
+	</body>
 </html>

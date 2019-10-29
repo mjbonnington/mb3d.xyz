@@ -11,9 +11,43 @@ if($n > count($feat_jobs)) $n = count($feat_jobs);
 $rand_jobs = array_slice($feat_jobs, 1, count($feat_jobs));
 shuffle($rand_jobs);
 ?>
-<div class="section break">
-	<p class="body">Welcome to my website. I am a London-based freelance CG artist specialising in 3D modelling, design and animation.</p>
-</div>
+
+			<header class='header'>
+				<img src='images/mb3d-logo.svg' width='160' alt='MB3D logo'/>
+				<h1 class='title'>Michael Bonnington</h1>
+				<h2 class='subtitle'>{ 3D&nbsp;Artist; CG&nbsp;Supervisor; VFX&nbsp;Pipeline&nbsp;Developer }</h2>
+				<!-- <ul class='subtitle'>
+					<li>3D Artist</li>
+					<li>CG Supervisor</li>
+					<li>VFX Pipeline Developer</li>
+				</ul> -->
+			</header>
+
+			<section class='video-wrapper'>
+				<video width='1920' controls>
+					<source src='media/mb-reel-1806-v04-h264-1080p.mp4' type='video/mp4'/>
+					Your browser does not support HTML5 video. <a href='media/mb-reel-1806-v04-h264-1080p.mp4'>Download video</a>
+				</video>
+
+				<nav class='gallery-nav'>
+					<ul class='header-menu'>
+						<li><a href='static-reel.html'>Showreel &gt;</a></li>
+					</ul>
+				</nav>
+			</section>
+
+			<section class='gallery-wrapper'>
+
+
+
+				<nav class='gallery-nav'>
+					<ul class='header-menu'>
+						<li><a href='static-projects.html'>More Projects &gt;</a></li>
+					</ul>
+				</nav>
+			</section>
+
+
 
 <?php include("news/latest.html"); ?>
 

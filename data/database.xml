@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<site>
-		<title>Michael Bonnington</title>
+		<title>MB3D</title>
 		<description>London, UK based visual effects artist specialising in 3D modelling, design, lighting, and rendering.</description>
 		<keywords>3d, animation, animator, artist, cg, cgi, computer animation, computer generated imagery, computer graphics, designer, developer, freelance, freelancer, graphic design, lighter, lighting, lookdev, look development, modeler, modeller, pipeline, programmer, reel, renderer, rendering, scripting, showreel, vfx, vfx supervisor, video games, visual effects, visualisation</keywords>
 		<author>Michael Bonnington</author>
@@ -16,13 +16,52 @@
 		<name>Reel</name>
 		<status>1-visible</status>
 	</page>
-	<page id="portfolio">
-		<name>Portfolio</name>
+	<page id="projects">
+		<name>Projects</name>
 		<status>1-visible</status>
 	</page>
+
+	<page id="films">
+		<name>Films</name>
+		<status>3-visible</status>
+		<colour>#d0a32d</colour>
+		<subpage id="commercials">
+			<name>Commercials</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="shorts">
+			<name>Short Films</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="broadcast">
+			<name>Broadcast</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="online">
+			<name>Online</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="promos">
+			<name>Music Promos</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="spacer">
+		</subpage>
+		<subpage id="reel">
+			<name>TANDEM Showreel</name>
+			<status>3-visible</status>
+			<link>http://reels.sohosoho.tv/xhtml=EJAM7WVO</link>
+		</subpage>
+	</page>
+
 	<page id="contact">
 		<name>Contact</name>
-		<status>1-visible</status>
+		<status>2-footer</status>
 	</page>
 	<page id="job">
 		<name>Job</name>
@@ -64,9 +103,9 @@
 		<credit role="Producer">John Smith</credit>
 		<tags>CGI, 2D, Stop-motion, Live action</tags>
 	</job>
-	<job id="rbl_rethink_remembrance">
+	<job id="rbl-rethink-remembrance">
 		<name>Rethink Remembrance</name>
-		<status>0-hidden</status>
+		<status>3-featured</status>
 		<category>Commercials</category>
 		<format>30&amp;quot; TV commercial, digital</format>
 		<studio>Gramercy Park Studios</studio>
@@ -113,7 +152,7 @@
 		<movie1>c5_big_brother_30</movie1>
 		<tags>3D, Matchmove, Lookdev, Lighting, Rendering</tags>
 	</job>
-	<job id="butterfinger_bolder_than_bold">
+	<job id="butterfinger-bolder-than-bold">
 		<status>3-featured</status>
 		<category>Commercials</category>
 		<name>Bolder Than Bold</name>
@@ -197,7 +236,7 @@
 		<image3>betfair_world_cup_cashout_03</image3>
 		<tags>3D, Modelling, Lookdev, Texturing, Lighting, Photorealism</tags>
 	</job>
-	<job id="betfair_this_is_play">
+	<job id="betfair-this-is-play">
 		<status>3-featured</status>
 		<category>Commercials</category>
 		<name>This Is Play</name>

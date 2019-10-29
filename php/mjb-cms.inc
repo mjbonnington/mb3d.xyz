@@ -156,6 +156,7 @@ function getLatest($thumb_path, $query, $filter) {
 		for($s=$max_status_level;$s>1;$s--) {
 			foreach($xml_path as $item) {
 				if($item->status == $s) {
+					// $img_src = $thumb_path . $item->attributes()->id . "/192x108/01.jpg";
 					$img_src = $thumb_path . $item->attributes()->id . "/192x108/01.jpg";
 					if(file_exists($img_src)) return $img_src;
 				}
@@ -163,7 +164,7 @@ function getLatest($thumb_path, $query, $filter) {
 		}
 	}
 
-	return "images/placeholder_192x108.gif";
+	return "images/placeholder-thumb.png";
 }
 
 // Recurse through XML data structure and return a long string of values (used for searching)
@@ -175,7 +176,37 @@ function printRecursive(&$xmlObj, $depth=0) {
 	return $str;
 }
 
-// Create grid of thumbnails
+// Generate dynamic navigation menu
+//function createMenu(&$menu_array, $page, $bg=false) {
+function createMenu($page) {
+	global $db, $r;
+
+	echo "\t\t\t<header class='header-compact'>\n";
+	echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo.svg' width='100' alt='MB3D logo'/></a>\n";
+	echo "\t\t\t\t<!-- <a href='sitemap.php'><img src='images/menu.svg' width='24' alt='Menu'/></a> -->\n";
+	echo "\n";
+	echo "\t\t\t\t<nav>\n";
+	echo "\t\t\t\t\t<ul class='header-menu'>\n";
+
+	foreach($db->page as $i) {
+		if($i->status == "1-visible") {
+			if($i->attributes()->id == $page) {
+				echo "\t\t\t\t\t\t<li>" . $i->name . "</li>\n";
+			} else {
+				if($r) echo "\t\t\t\t\t\t<li>" . '<a href="/' . $i->attributes()->id  . '">' . $i->name . "</a></li>\n";
+				else echo "\t\t\t\t\t\t<li>" . '<a href="?p=' . $i->attributes()->id  . '">' . $i->name . "</a></li>\n";
+			}
+		}
+		$valid_pages[] = $i->attributes()->id;
+	}
+
+	echo "\t\t\t\t\t</ul>\n";
+	echo "\t\t\t\t</nav>\n";
+	echo "\t\t\t</header>\n";
+
+}
+
+// Create gallery view (grid of thumbnails)
 function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $status_threshold="1", $query=null, $filter=null, $literal=false, $suppress_error_message=false) {
 	global $hl, $p;
 
@@ -199,7 +230,7 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 	// Sort array...
 	//sort($grid_array);
 
-	echo "<div class='section'>\n";
+	echo "\t\t\t\t<div class='gallery'>\n";
 	foreach($grid_array as $item) {
 
 		// Evaluate search query string...
@@ -217,10 +248,6 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 		// Create grid...
 		if($match && $item->status > $status_threshold) {
 			if($max>=$start && $max<$length+$start) {
-				$item_str = "thumb rollover";
-				if($n%$num_per_row <= 1) $item_str .= " spacer";
-				//if($n%$num_per_row == 0) $item_str .= " break";
-
 				// Generate links...
 				if($item->link) {
 					if($item->link == "auto") $link = $hl["p"] . $p . $hl["q"] . $item->attributes()->id;
@@ -228,17 +255,26 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 				}
 				else $link = $hl["p"] . "job" . $hl["q"] . $item->attributes()->id;
 
+				// Generate title, subtitle and captions/badges...
+
 				// Check job thumbnail exists, otherwise use placeholder...
-				//$img_src = $thumb_path . $item->attributes()->id . "/192x108/01.jpg";
-				$img_src = $thumb_path . $item->image;
-				if(!file_exists($img_src)) $img_src = getLatest($thumb_path, $item->name, $filter);
+				$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
+				if(!file_exists($img_src)) $img_src = "images/placeholder-thumb.png";
+				// $img_src = $thumb_path . $item->image;
+				// if(!file_exists($img_src)) $img_src = getLatest($thumb_path, $item->name, $filter);
 
 				// Output the HTML...
-				echo "\t<div class='" . $item_str . "'>\n";
-				echo "\t\t<div class='title'>" . $item->name . "</div>\n";
-				echo "\t\t<a href='" . $link . "'><img src='" . $img_src . "' alt='" . $item->name . "'/></a>\n";
-				if($item->caption) echo "\t\t<div class='caption'>" . $item->caption . "</div>\n";
-				echo "\t</div>\n\n";
+				echo "\t\t\t\t\t<div class='gallery-item'>\n";
+				echo "\t\t\t\t\t\t<a href='" . $link . "'>\n";
+				echo "\t\t\t\t\t\t\t<img src='" . $img_src . "' alt='" . $item->name . "'/>\n";
+				echo "\t\t\t\t\t\t\t<span class='gallery-item-title'>\n";
+				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $item->brand . "</h1>\n";  // use client if brand is empty
+				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $item->name . "</h2>\n";
+				echo "\t\t\t\t\t\t\t</span>\n";
+				echo "\t\t\t\t\t\t</a>\n";
+				echo "\t\t\t\t\t</div>\n";
+
+				// if($item->caption) echo "\t\t<div class='caption'>" . $item->caption . "</div>\n";
 				$n++;
 			} else $n = 0;
 			$max++;
@@ -246,12 +282,11 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 	}
 
 	// Print error message if no results found...
-	if($max == 0 && !$suppress_error_message) echo "\t<div class='error'><p>No results found</p></div>\n";
+	if($max == 0 && !$suppress_error_message) echo "<div class='error'><p>No results found</p></div>\n";
 
-	echo "\t<div class='break'></div>\n";
-	echo "</div>\n";
+	echo "\t\t\t\t</div>\n";
 
-		return $max; // return the total number of results found - this value is used by the function createNav();
+	return $max; // return the total number of results found - this value is used by the function createNav();
 }
 
 // Generate page navigation
@@ -272,30 +307,40 @@ function createNav($start, $length, $max, $show_pages=true, $prev_str="Prev", $n
 	// Only create navigation if there are more items than can be displayed on one page...
 	if($max > $length) {
 
-		echo "<div class='nav'>\n";
+		echo "\t\t\t\t<nav class='gallery-nav'>\n";
+		echo "\t\t\t\t\t<ul class='header-menu'>\n";
 
 		// Create previous page link...
 		if($start > 0) {
 			$page_link = ($start-$length)>=0 ? $start-$length : 0;
 			$link = $link_base . $page_link;
 
-			echo "\t<a class='lfloat' href='" . $link . "'><img src='images/button_minus.gif' alt=''/><span>" . $prev_str . "</span></a>\n";
+			echo "\t\t\t\t\t\t<li><a href='" . $link . "'>" . $prev_str . "</a></li>\n";
 		} else {
-			echo "\t<div class='lfloat opacity0'><img src='images/button_minus.gif' alt=''/><span>" . $prev_str . "</span></div>\n";
+			echo "\t\t\t\t\t\t<li>" . $prev_str . "</li>\n";
 		}
 
 		// Create individual page links...
-		for($n=1; $n<=ceil($max/$length); $n++) {
-			$page_link = ($n-1)*$length;
-			$link = $link_base . $page_link;
+		if($show_pages) {
+			for($n=1; $n<=ceil($max/$length); $n++) {
+				$page_link = ($n-1)*$length;
+				$link = $link_base . $page_link;
 
-			if($show_pages) {
 				if($start != $page_link) {
-					echo "\t<a class='border' href='" . $link . "'><span>" . $n . "</span></a>\n";
+					echo "\t\t\t\t\t\t<li><a href='" . $link . "'>" . $n . "</a></li>\n";
 				} else {
-					echo "\t<span><b>" . $n . "</b></span>\n";
+					echo "\t\t\t\t\t\t<li class='current'>" . $n . "</li>\n";
 				}
 			}
+		} else {
+			for($n=1; $n<=ceil($max/$length); $n++) {
+				$page_link = ($n-1)*$length;
+			}
+
+			$first = $start+1;
+			if($start+$length < $max) $last = $start+$length;
+			else $last = $max;
+			echo "\t\t\t\t\t\t<li class='current'>" . $first . "-" . $last . " of " . $max . "</li>\n";
 		}
 
 		// Create next page link...
@@ -303,12 +348,13 @@ function createNav($start, $length, $max, $show_pages=true, $prev_str="Prev", $n
 			$page_link = ($start+$length)<$max ? $start+$length : $max-1;
 			$link = $link_base . $page_link;
 
-			echo "\t<a class='rfloat' href='" . $link . "'><span>" . $next_str . "</span><img src='images/button_plus.gif' alt=''/></a>\n";
+			echo "\t\t\t\t\t\t<li><a href='" . $link . "'>" . $next_str . "</a></li>\n";
 		} else {
-			echo "\t<div class='rfloat opacity0'><span>" . $next_str . "</span><img src='images/button_plus.gif' alt=''/></div>\n";
+			echo "\t\t\t\t\t\t<li>" . $next_str . "</li>\n";
 		}
 
-		echo "</div>\n";
+		echo "\t\t\t\t\t</ul>\n";
+		echo "\t\t\t\t</nav>\n";
 	}
 }
 
@@ -327,10 +373,10 @@ function includePage($page_id) {
 
 		else
 		{
-			echo "<div class='error'><p>ERROR: Page does not exist: &quot;" . $page_id . "&quot;</p></div>\n";
+			echo "<div class='error'><p>ERROR: '" . $page_id . "' page does not exist.</p></div>\n";
 		}
 	}
-	else echo "<div class='error'><p>ERROR: Invalid page specified: &quot;" . $page_id . "&quot;</p></div>\n";
+	else echo "<div class='error'><p>ERROR: invalid page.</p></div>\n";
 }
 
 // Generate footer links
