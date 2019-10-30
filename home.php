@@ -31,54 +31,25 @@ shuffle($rand_jobs);
 
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
-						<li><a href='static-reel.html'>Showreel &gt;</a></li>
+						<li><a href='?p=reel'>Showreel &gt;</a></li>
 					</ul>
 				</nav>
 			</section>
 
 			<section class='gallery-wrapper'>
 
-
+<?php $max_items = createGrid($db->job, $s, 3, "media/", "3"); ?>
 
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
-						<li><a href='static-projects.html'>More Projects &gt;</a></li>
+						<li><a href='?p=projects'>More Projects &gt;</a></li>
+						<li><a href='?p=projects&q=commercials'>Commercials</a></li>
+						<li><a href='?p=projects&q=broadcast'>Broadcast</a></li>
+						<li><a href='?p=projects&q=film'>Film</a></li>
+						<li><a href='?p=projects&q=shorts'>Shorts</a></li>
+						<li><a href='?p=projects&q=promos'>Promos</a></li>
+						<li><a href='?p=projects&q=online'>Online</a></li>
+						<li><a href='?p=projects&q=other'>Other</a></li>
 					</ul>
 				</nav>
 			</section>
-
-
-
-<?php include("news/latest.html"); ?>
-
-<div class="section break">
-	<h2 class="heading break">Featured Jobs</h2>
-
-	<div class="thumb full break">
-		<p class="category">Latest: <?php echo $db->job[$feat_jobs[0]]->category; ?></p>
-		<a href="<?php if($r) echo "job/" . $db->job[$feat_jobs[0]]->attributes()->id; else echo "?p=job&amp;j=" . $db->job[$feat_jobs[0]]->attributes()->id; ?>"><img src="images/<?php echo $db->job[$feat_jobs[0]]->attributes()->id; ?>_main.jpg" width="600" height="200" alt=""/></a>
-		<h3><?php echo $db->job[$feat_jobs[0]]->title; ?></h3>
-		<p><?php echo substr($db->job[$feat_jobs[0]]->description, 0, strpos($db->job[$feat_jobs[0]]->description, ". ")+1); ?></p>
-		<p><a href="<?php if($r) echo "job/" . $db->job[$feat_jobs[0]]->attributes()->id; else echo "?p=job&amp;j=" . $db->job[$feat_jobs[0]]->attributes()->id; ?>">[read more]</a></p>
-	</div>
-
-<?php
-for($i=0; $i<$n-1; $i++) {
-	$j = $rand_jobs[$i];
-	$item_str = "thumb third";
-	if($i%3 <= 1) $item_str .= " spacer12";
-	if($i%3 == 0) $item_str .= " break";
-?>
-	<div class="<?php echo $item_str; ?>">
-		<p class="category"><?php echo $db->job[$j]->category; ?></p>
-		<a href="<?php if($r) echo "job/" . $db->job[$j]->attributes()->id; else echo "?p=job&amp;j=" . $db->job[$j]->attributes()->id; ?>"><img src="images/<?php echo $db->job[$j]->attributes()->id; ?>_t.jpg" width="184" height="104" alt=""/></a>
-		<h3><?php echo $db->job[$j]->title; ?></h3>
-		<p><?php echo substr($db->job[$j]->description, 0, strpos($db->job[$j]->description, ". ")+1); ?></p>
-		<p><a href="<?php if($r) echo "job/" . $db->job[$j]->attributes()->id; else echo "?p=job&amp;j=" . $db->job[$j]->attributes()->id; ?>">[read more]</a></p>
-	</div>
-
-<?php
-}
-?>
-	<div class="break"></div>
-</div>

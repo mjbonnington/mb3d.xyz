@@ -30,23 +30,28 @@
 			<status>3-visible</status>
 			<link>auto</link>
 		</subpage>
-		<subpage id="shorts">
-			<name>Short Films</name>
-			<status>3-visible</status>
-			<link>auto</link>
-		</subpage>
 		<subpage id="broadcast">
 			<name>Broadcast</name>
 			<status>3-visible</status>
 			<link>auto</link>
 		</subpage>
-		<subpage id="online">
-			<name>Online</name>
+		<subpage id="film">
+			<name>Film</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="shorts">
+			<name>Shorts</name>
 			<status>3-visible</status>
 			<link>auto</link>
 		</subpage>
 		<subpage id="promos">
-			<name>Music Promos</name>
+			<name>Promos</name>
+			<status>3-visible</status>
+			<link>auto</link>
+		</subpage>
+		<subpage id="online">
+			<name>Online</name>
 			<status>3-visible</status>
 			<link>auto</link>
 		</subpage>
@@ -87,7 +92,7 @@
 	<job id="unique_job_id">
 		<name>Template Job</name>
 		<status>0-hidden</status>
-		<category>Commercials / Broadcast / Film / Shorts / Promos / Other</category>
+		<category>Commercials / Broadcast / Film / Shorts / Promos / Online / Other</category>
 		<studio>Name of production studio</studio>
 		<agency>Name of agency</agency>
 		<client>Name of client</client>
@@ -115,8 +120,8 @@
 		<movie1>rbl_rethink_remembrance_30</movie1>
 		<tags>3D, Modelling, Texturing, Lighting, FX, Fur, Rendering, Compositing</tags>
 	</job>
-	<job id="sensodyne_tag">
-		<status>0-hidden</status>
+	<job id="sensodyne-tag">
+		<status>2-live</status>
 		<category>Commercials</category>
 		<name>Endframe tag</name>
 		<format></format>
@@ -139,7 +144,7 @@
 		<movie1>paradontax_30</movie1>
 		<tags>3D, Modelling, Matchmove, Lookdev, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="c5_big_brother">
+	<job id="c5-big-brother">
 		<status>2-live</status>
 		<category>Broadcast</category>
 		<name>Big Brother</name>
@@ -164,18 +169,17 @@
 		<agency></agency>
 		<studio>Gramercy Park Studios</studio>
 		<credit role="Director">Armando Bo</credit>
-		<description></description>
-		<movie>media/butterfinger_bolder_than_bold_dir_cut_h264_1080p.mp4</movie>
-		<image>media/butterfinger_bolder_than_bold_sh060.jpg</image>
+		<description>Description</description>
+		<movie link="media/butterfinger-bolder-than-bold-dir-cut-h264-1080p.mp4"/>
+		<image link="media/butterfinger-bolder-than-bold-sh060.jpg"/>
 		<tags>3D, Creatures, Modelling, Lookdev, Texturing, Lighting, FX, Fur, Compositing, Photorealism, Maya, Xgen, Redshift, Nuke</tags>
 	</job>
-	<job id="heinz_beanz">
+	<job id="heinz-beanz">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Heinz Beanz</name>
+		<name>Baked Beans</name>
 		<format></format>
 		<client>Heinz</client>
-		<brand>Baked Beans</brand>
 		<agency></agency>
 		<studio>Gramercy Park Studios</studio>
 		<date>201507</date>
@@ -186,13 +190,13 @@
 		<image3>heinz_beanz_03</image3>
 		<tags>3D, Modelling, Lookdev, Texturing, Lighting, Compositing, Photorealism</tags>
 	</job>
-	<job id="listerine_advanced_white">
+	<job id="listerine-advanced-white">
 		<status>2-live</status>
 		<category>Commercials</category>
 		<name>Listerine Advanced White</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Nestle</client>
-		<brand>Butterfinger</brand>
+		<brand>Listerine</brand>
 		<agency></agency>
 		<studio>Gramercy Park Studios</studio>
 		<date>201506</date>
@@ -203,7 +207,7 @@
 		<image3>listerine_advanced_white_03</image3>
 		<tags>3D, Modelling, Rigging, Lookdev, Texturing, Lighting, Compositing</tags>
 	</job>
-	<job id="homebase_xmas">
+	<job id="homebase-xmas">
 		<status>2-live</status>
 		<category>Commercials</category>
 		<name>Homebase Xmas</name>
@@ -219,7 +223,7 @@
 		<image3>homebase_xmas_03</image3>
 		<tags>3D, Matchmove, Modelling, Lookdev, Texturing, Lighting, Compositing, Photorealism</tags>
 	</job>
-	<job id="betfair_world_cup_cashout">
+	<job id="betfair-world-cup-cashout">
 		<status>3-featured</status>
 		<category>Commercials</category>
 		<name>World Cup Cashout</name>
@@ -253,7 +257,7 @@
 		<image link="media/betfair-this-is-play-sh160.jpg"/>
 		<tags>Commercials, 3D, Creatures, Lookdev, Texturing, Set reconstruction, Lighting, Photorealism, Maya, V-Ray, PFTrack, Nuke</tags>
 	</job>
-	<job id="bacardi_otard_xo">
+	<job id="bacardi-otard-xo">
 		<status>2-live</status>
 		<category>Commercials</category>
 		<name>Baron Otard XO</name>
@@ -287,7 +291,7 @@
 		<image3>irobot_scooba_model</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="itv1_celeb">
+	<job id="itv1-celeb">
 		<status>2-live</status>
 		<category>Broadcast</category>
 		<name>I'm a Celebrity - Get Me Out Of Here!</name>
@@ -314,10 +318,11 @@
 		<image3>waiting_03</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Editing</tags>
 	</job>
-	<job id="sun_race">
-		<status>3-featured</status>
+	<job id="sun-race">
+		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Sun 'Race'</name>
+		<brand>Sun</brand>
+		<name>Race</name>
 		<format>30&amp;quot; TV commercial</format>
 		<studio>Tandem</studio>
 		<director>Daniel Greaves</director>
@@ -329,10 +334,11 @@
 		<image3>sun_race_03</image3>
 		<tags>3D, Pre-viz, Modelling, Animation</tags>
 	</job>
-	<job id="hp7a_vfx">
+	<job id="hp7a-vfx">
 		<status>2-live</status>
 		<category>Film</category>
-		<name>Harry Potter and the Deathly Hallows</name>
+		<brand>Harry Potter</brand>
+		<name>and the Deathly Hallows</name>
 		<format>Feature Film</format>
 		<client>Warner Bros. Pictures/Heyday Films</client>
 		<studio>Baseblack</studio>
@@ -341,12 +347,13 @@
 		<description>I did visual effects work on two sequences in the latest Harry Potter: firstly a scene in the woods where Harry, Hermione and Ron attempt to destroy a horcrux - a locket with mystical powers. I animated the locket itself and used hair simulation dynamics to create the locket's chain. Secondly, in which Bellatrix (played by Helena Bonham-Carter) uses a magic spell which causes a black snake to materialise and strangle her adversary. This was the first creature work I had done in a while and I modelled, textured and lit the snake.</description>
 		<tags>3D, Modelling, Texturing, Lighting, Rendering</tags>
 	</job>
-	<job id="tuborg_idents">
+	<job id="tuborg-idents">
 		<status>3-featured</status>
 		<category>Commercials</category>
 		<name>Tuborg Music Idents</name>
 		<format>4x 15&amp;quot; TV idents</format>
-		<client>Tuborg</client>
+		<client>Carsberg</client>
+		<brand>Tuborg</brand>
 		<agency>Fold7</agency>
 		<studio>WeR3D</studio>
 		<director>Paul Clements</director>
@@ -358,7 +365,7 @@
 		<image2>tuborg_dance_01</image2>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering</tags>
 	</job>
-	<job id="africanfootball">
+	<job id="african-football">
 		<status>0-hidden</status>
 		<category>Broadcast</category>
 		<name>African Football</name>
@@ -385,23 +392,24 @@
 		<image2>turning_02</image2>
 		<tags>3D, Animation, Rigging, Lighting, Rendering, Matchmoving</tags>
 	</job>
-	<job id="f1rocks">
+	<job id="f1-rocks">
 		<status>3-featured</status>
 		<category>Broadcast</category>
 		<name>F1 Rocks</name>
-		<format>30&amp;quot; TV name sequence</format>
+		<format>30&amp;quot; TV title sequence</format>
 		<client>All The Worlds/Universal</client>
+		<brand>Formula 1</brand>
 		<studio>Foreign Office</studio>
 		<director>Fredrik Nordbeck</director>
 		<date>200909</date>
-		<description>A 'music and motorsport extravaganza', F1 Rocks is a series of rock concerts coinciding with Formula 1 Grand Prix race weekends in cities across the world. The inaugural show was held in Singapore on the 24th-26th September, and this is the 30 second opening names for the televised event, to be shown in over 40 countries. Production was a combination of 2D and 3D, with creation of the 3D scenes including camera animation created by myself in Maya, then exported to After Effects where additional imagery and particle simulations could be added to the scene. I modelled a number of 3D elements, including the F1 car, for which I then developed rendering and post-production techniques to produce the final, abstract look.</description>
+		<description>A 'music and motorsport extravaganza', F1 Rocks is a series of rock concerts coinciding with Formula 1 Grand Prix race weekends in cities across the world. The inaugural show was held in Singapore on the 24th-26th September, and this is the 30 second opening titles for the televised event, to be shown in over 40 countries. Production was a combination of 2D and 3D, with creation of the 3D scenes including camera animation created by myself in Maya, then exported to After Effects where additional imagery and particle simulations could be added to the scene. I modelled a number of 3D elements, including the F1 car, for which I then developed rendering and post-production techniques to produce the final, abstract look.</description>
 		<movie1>f1rocks_30</movie1>
 		<image1>f1rocks_01</image1>
 		<image2>f1rocks_02</image2>
 		<image3>f1rocks_03</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="shuuemura">
+	<job id="shu-uemura">
 		<status>2-live</status>
 		<category>Other</category>
 		<name>Shu Uemura Bento Box</name>
@@ -416,20 +424,21 @@
 		<image3>shuuemura_03</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
-	<job id="hp6_names">
+	<job id="hp6-titles">
 		<status>2-live</status>
 		<category>Film</category>
-		<name>Harry Potter and the Half-Blood Prince</name>
-		<format>Feature film names</format>
+		<brand>Harry Potter</brand>
+		<name>and the Half-Blood Prince</name>
+		<format>Feature film titles</format>
 		<client>Warner Bros. Pictures/Heyday Films</client>
 		<studio>Foreign Office</studio>
 		<director>David Yates</director>
 		<date>200907</date>
-		<description>The sixth movie in the blockbusting Harry Potter series features an animated end credits sequence in which the names form out of clouds of ink. The job was completed in October 2008 but the film wasn't released until July 2009. The three-and-a-half-minute sequence uses one continuous camera flythrough within a volumetric liquid-like substance. The ink clouds are a combination of live action and CG created with Maya Fluids. I was the sole 3D artist on the project.</description>
+		<description>The sixth movie in the blockbusting Harry Potter series features an animated end credits sequence in which the titles form out of clouds of ink. The job was completed in October 2008 but the film wasn't released until July 2009. The three-and-a-half-minute sequence uses one continuous camera flythrough within a volumetric liquid-like substance. The ink clouds are a combination of live action and CG created with Maya Fluids. I was the sole 3D artist on the project.</description>
 		<url>http://www.youtube.com/watch?v=0QAhbXd374M</url>
 		<tags>3D, Animation, Procedural Shaders, Fluids, Compositing</tags>
 	</job>
-	<job id="coi_highwaycode">
+	<job id="coi-highway-code">
 		<status>0-hidden</status>
 		<category>Broadcast</category>
 		<name>Highway Code</name>
@@ -439,21 +448,21 @@
 		<director>Filipe Al&amp;ccedil;ada</director>
 		<date>200907</date>
 	</job>
-	<job id="cheri_names">
+	<job id="cheri-titles">
 		<status>0-hidden</status>
 		<category>Film</category>
 		<name>Cheri</name>
-		<format>Feature film names</format>
+		<format>Feature film titles</format>
 		<client>Path&amp;eacute; Pictures/Miramax/Bill Kenwright Production</client>
 		<studio>Foreign Office</studio>
 		<director>Stephen Frears</director>
 		<date>200905</date>
 		<tags>3D, Fluids</tags>
 	</job>
-	<job id="kswiss_mtv">
+	<job id="kswiss-mtv">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>K-Swiss 'Remaster the Classic'</name>
+		<name>Remaster the Classic</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>K-Swiss</client>
 		<agency>MTV Networks Europe</agency>
@@ -466,10 +475,10 @@
 		<image3>kswiss_mtv_03</image3>
 		<tags>3D, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="rbs_idents">
+	<job id="rbs-idents">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>RBS C4 Idents</name>
+		<name>C4 Idents</name>
 		<format>6x 5-15&amp;quot; idents</format>
 		<client>Royal Bank of Scotland</client>
 		<studio>Bermuda Shorts</studio>
@@ -482,10 +491,10 @@
 		<image3>rbs_scotvilla_01</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Toon Shading</tags>
 	</job>
-	<job id="samsung_attraction">
+	<job id="samsung-attraction">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Samsung 'Attraction'</name>
+		<name>Attraction</name>
 		<format>2x 30&amp;quot; TV commercials</format>
 		<client>Samsung</client>
 		<agency>Cheil Communication Germany</agency>
@@ -499,26 +508,26 @@
 		<image3>samsung_buildings</image3>
 		<tags>3D, Modelling, Texturing, Lighting, Photorealism</tags>
 	</job>
-	<job id="marketkitchen">
+	<job id="market-kitchen">
 		<status>2-live</status>
 		<category>Broadcast</category>
 		<name>Market Kitchen</name>
-		<format>TV names</format>
+		<format>TV titles</format>
 		<client>UKTV Food</client>
 		<studio>Tandem</studio>
 		<director>Tony Mines</director>
 		<date>200801</date>
-		<description>Here we have a stop-motion name sequence for Market Kitchen, a cookery show on digital channel UKTV Food. The time lapse sequence shows a crate containing a whole year of seasonal food in 24 seconds. I embellished the stop-motion work with some minor CG effects: a butterfly in spring, flowering thyme leaves in summer, falling leaves in autumn and snow in winter.</description>
+		<description>Here we have a stop-motion title sequence for Market Kitchen, a cookery show on digital channel UKTV Food. The time lapse sequence shows a crate containing a whole year of seasonal food in 24 seconds. I embellished the stop-motion work with some minor CG effects: a butterfly in spring, flowering thyme leaves in summer, falling leaves in autumn and snow in winter.</description>
 		<movie1>marketkitchen_30</movie1>
 		<image1>marketkitchen_01</image1>
 		<image2>marketkitchen_02</image2>
 		<image3>marketkitchen_03</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
-	<job id="halfords_santa">
+	<job id="halfords-santa">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Halfords 'Santa'</name>
+		<name>Santa</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Halfords</client>
 		<agency>M&amp;amp;C Saatchi</agency>
@@ -532,12 +541,13 @@
 		<image3>halfords_santa_03</image3>
 		<tags>3D, Modelling, Texturing, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="cdm_gorilla">
+	<job id="cdm-gorilla">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Cadbury's Dairy Milk 'Gorilla'</name>
+		<name>Gorilla</name>
 		<format>90&amp;quot; TV commercial</format>
 		<client>Cadbury</client>
+		<brand>Cadbury's Dairy Milk</brand>
 		<agency>Fallon</agency>
 		<studio>Golden Sq</studio>
 		<director>Juan Cabral</director>
@@ -559,10 +569,10 @@
 		<url>http://www.davidcairnsphoto.com</url>
 		<tags>HTML, Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
-	<job id="fairy_sparkle">
+	<job id="fairy-sparkle">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Fairy 'Sparkle'</name>
+		<name>Sparkle</name>
 		<format>20&amp;quot; TV commercial</format>
 		<client>Fairy Liquid</client>
 		<agency>Grey London</agency>
@@ -575,12 +585,13 @@
 		<image2>fairy_sparkle_02</image2>
 		<tags>3D, Modelling, Texturing, Lighting, Rendering</tags>
 	</job>
-	<job id="cocopops_cupboard">
+	<job id="coco-pops-cupboard">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Coco Pops 'Cupboard'</name>
+		<name>Cupboard</name>
 		<format>30&amp;quot; TV commercial</format>
-		<client>Kelloggs</client>
+		<client>Kellogg's</client>
+		<brand>Coco Pops</brand>
 		<agency>Leo Burnett</agency>
 		<studio>Tandem</studio>
 		<director>Tony Mines</director>
@@ -617,12 +628,13 @@
 		<image3>britishlibrary_03</image3>
 		<tags>3D, Modelling, Flash</tags>
 	</job>
-	<job id="mini_lasers">
+	<job id="mini-lasers">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Mini Launch 'Lasers'</name>
+		<name>Lasers</name>
 		<format>Projection</format>
-		<client>BMW Mini</client>
+		<client>BMW</client>
+		<brand>Mini</brand>
 		<agency>WCRS</agency>
 		<studio>Golden Sq</studio>
 		<director>Chris Cairns</director>
@@ -632,10 +644,10 @@
 		<image1>mini_lasers_01</image1>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering</tags>
 	</job>
-	<job id="ribena_currantaffairs">
+	<job id="ribena-currant-affairs">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Ribena 'Currant Affairs'</name>
+		<name>Currant Affairs</name>
 		<format>30&amp;quot; TV/cinema commercial</format>
 		<client>Ribena</client>
 		<agency>M&amp;amp;C Saatchi</agency>
@@ -661,12 +673,13 @@
 		<url>http://www.sticklebackmusic.com</url>
 		<tags>Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
-	<job id="xbox360_sploj">
+	<job id="xbox360-sploj">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Xbox 360 'Sploj'</name>
+		<name>Sploj</name>
 		<format>Web</format>
-		<client>Microsoft Xbox 360</client>
+		<client>Microsoft</client>
+		<brand>Xbox 360</brand>
 		<studio>Th1ng</studio>
 		<date>200604</date>
 		<description>This is part of an online campaign to promote Xbox Live - Microsoft's online multiplayer gaming service for the Xbox 360 console. I lit, rendered and comped the scenes with this three-eyed, furry monster character called Sploj.</description>
@@ -689,10 +702,10 @@
 		<url>http://www.insidestory.iop.org</url>
 		<tags>HTML, Flash, Game, Web Design, Programming</tags>
 	</job>
-	<job id="ribena_liquidator">
+	<job id="ribena-liquidator">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Ribena 'Liquidator'</name>
+		<name>Liquidator</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
 		<client>Ribena</client>
 		<agency>M&amp;amp;C Saatchi</agency>
@@ -706,10 +719,10 @@
 		<image3>ribena_liquidator_03</image3>
 		<tags>3D, Modelling, Animation, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
-	<job id="ribena_mud">
+	<job id="ribena-mud">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Ribena 'Mud on the Tracks'</name>
+		<name>Mud on the Tracks</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
 		<client>Ribena</client>
 		<agency>M&amp;amp;C Saatchi</agency>
@@ -724,10 +737,10 @@
 		<image3>ribena_mud_03</image3>
 		<tags>3D, Modelling, Rigging, Matchmoving, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
-	<job id="payback_parade">
+	<job id="payback-parade">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Payback 'Parade'</name>
+		<name>Parade</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Payback</client>
 		<agency>Grey Dusseldorf</agency>
@@ -741,7 +754,7 @@
 		<image3>payback_parade_03</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Compositing, Toon Shading</tags>
 	</job>
-	<job id="usualsuspect">
+	<job id="the-usual-suspect">
 		<status>2-live</status>
 		<category>Shorts</category>
 		<name>The Usual Suspect</name>
@@ -769,10 +782,10 @@
 		<image1>killzone_01</image1>
 		<tags>3D, Texturing, Animation, Game, Shockwave</tags>
 	</job>
-	<job id="payback_winner">
+	<job id="payback-winner">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Payback 'Winner'</name>
+		<name>Winner</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Payback</client>
 		<agency>Grey Dusseldorf</agency>
@@ -786,12 +799,13 @@
 		<image3>payback_winner_03</image3>
 		<tags>3D, Modelling, Texturing, Lighting, Compositing, Toon Shading</tags>
 	</job>
-	<job id="kumala_smooth">
+	<job id="kumala-smooth">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Kumala 'Smooth'</name>
+		<name>Smooth</name>
 		<format>20&amp;quot; TV commercial</format>
-		<client>Kumala/Western Wines</client>
+		<client>Western Wines</client>
+		<brand>Kumala</brand>
 		<agency>Poulter Partners</agency>
 		<studio>Tandem</studio>
 		<director>Nigel Pay</director>
@@ -803,12 +817,13 @@
 		<image3>kumala_smooth_03</image3>
 		<tags>3D, Modelling, Texturing, Rigging, Compositing</tags>
 	</job>
-	<job id="kumala_idents">
+	<job id="kumala-idents">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Kumala ITV2 Idents</name>
+		<name>ITV2 Movies</name>
 		<format>6x 10-15&amp;quot; idents</format>
-		<client>Kumala/Western Wines</client>
+		<client>Western Wines</client>
+		<brand>Kumala</brand>
 		<agency>Poulter Partners</agency>
 		<studio>Tandem</studio>
 		<director>Nigel Pay</director>
@@ -819,10 +834,10 @@
 		<image1>kumala_idents_01</image1>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
-	<job id="payback_starpramie">
+	<job id="payback-starpramie">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Payback 'Starpramie'</name>
+		<name>Starpramie</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Payback</client>
 		<agency>Grey Dusseldorf</agency>
@@ -836,10 +851,10 @@
 		<image3>payback_starpramie_03</image3>
 		<tags>3D, Modelling, Texturing, Particles, Lighting, Compositing, Toon Shading</tags>
 	</job>
-	<job id="chewits_auditions">
+	<job id="chewits-auditions">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Chewits 'Auditions'</name>
+		<name>Auditions</name>
 		<format>40&amp;quot; TV/cinema commercial</format>
 		<client>Chewits</client>
 		<agency>Brahm Advertising</agency>
@@ -852,10 +867,10 @@
 		<image2>chewits_auditions_02</image2>
 		<tags>3D, Modelling, Texturing</tags>
 	</job>
-	<job id="payback_blueplanet">
+	<job id="payback-blueplanet">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Payback 'Blue Planet'</name>
+		<name>Blue Planet</name>
 		<format>30&amp;quot; + 7&amp;quot; TV commercial</format>
 		<client>Payback</client>
 		<agency>Grey Dusseldorf</agency>
@@ -911,7 +926,7 @@
 		<image2>tif2002_01</image2>
 		<tags>Game, 3D, Modelling, Texturing</tags>
 	</job>
-	<job id="lastbond">
+	<job id="the-last-bond">
 		<status>2-live</status>
 		<category>Shorts</category>
 		<name>The Last Bond</name>

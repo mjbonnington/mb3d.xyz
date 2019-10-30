@@ -10,8 +10,8 @@ $q = (isset($_GET["q"]) && !empty($_GET["q"])) ? $_GET["q"] : null; // set query
 $s = (isset($_GET["s"]) && !empty($_GET["s"])) ? $_GET["s"] : 0; // on which item/page/etc do we start?
 
 // Sanitise variables passed in URL...
-$p = trim(preg_replace("/\s\s+/", " ", preg_replace("/[^A-Za-z0-9_]/", "", $p)));
-$q = trim(preg_replace("/\s\s+/", " ", preg_replace("/[^A-Za-z0-9_ ]/", " ", $q)));
+$p = trim(preg_replace("/\s\s+/", " ", preg_replace("/[^A-Za-z0-9_\-]/", "", $p)));
+$q = trim(preg_replace("/\s\s+/", " ", preg_replace("/[^A-Za-z0-9_\- ]/", " ", $q)));
 $s = preg_replace("/[^0-9]/", "", $s);
 
 // Set $r to true to enable url_rewrite compatible links...
@@ -207,7 +207,7 @@ function createMenu($page) {
 }
 
 // Create gallery view (grid of thumbnails)
-function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $status_threshold="1", $query=null, $filter=null, $literal=false, $suppress_error_message=false) {
+function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshold="1", $query=null, $filter=null, $literal=false, $suppress_error_message=false) {
 	global $hl, $p;
 
 	$max = 0;
@@ -256,6 +256,16 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 				else $link = $hl["p"] . "job" . $hl["q"] . $item->attributes()->id;
 
 				// Generate title, subtitle and captions/badges...
+				if($item->brand) {
+					$title = $item->brand;
+					$subtitle = $item->name;
+				} elseif($item->client) {
+					$title = $item->client;
+					$subtitle = $item->name;
+				} else {
+					$title = $item->name;
+					$subtitle = "&nbsp;";
+				}
 
 				// Check job thumbnail exists, otherwise use placeholder...
 				$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
@@ -268,8 +278,8 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 				echo "\t\t\t\t\t\t<a href='" . $link . "'>\n";
 				echo "\t\t\t\t\t\t\t<img src='" . $img_src . "' alt='" . $item->name . "'/>\n";
 				echo "\t\t\t\t\t\t\t<span class='gallery-item-title'>\n";
-				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $item->brand . "</h1>\n";  // use client if brand is empty
-				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $item->name . "</h2>\n";
+				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $title . "</h1>\n";  // use client if brand is empty
+				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $subtitle . "</h2>\n";
 				echo "\t\t\t\t\t\t\t</span>\n";
 				echo "\t\t\t\t\t\t</a>\n";
 				echo "\t\t\t\t\t</div>\n";
@@ -282,7 +292,7 @@ function createGrid(&$grid_array, $start, $length, $num_per_row, $thumb_path, $s
 	}
 
 	// Print error message if no results found...
-	if($max == 0 && !$suppress_error_message) echo "<div class='error'><p>No results found</p></div>\n";
+	if($max == 0 && !$suppress_error_message) echo "<div class='error'>No results found.</div>\n";
 
 	echo "\t\t\t\t</div>\n";
 
@@ -340,7 +350,9 @@ function createNav($start, $length, $max, $show_pages=true, $prev_str="Prev", $n
 			$first = $start+1;
 			if($start+$length < $max) $last = $start+$length;
 			else $last = $max;
-			echo "\t\t\t\t\t\t<li class='current'>" . $first . "-" . $last . " of " . $max . "</li>\n";
+			if($first == $last) $range = $first;
+			else $range = $first . "-" . $last;
+			echo "\t\t\t\t\t\t<li class='current'>" . $range . " of " . $max . "</li>\n";
 		}
 
 		// Create next page link...
@@ -376,7 +388,7 @@ function includePage($page_id) {
 			echo "<div class='error'><p>ERROR: '" . $page_id . "' page does not exist.</p></div>\n";
 		}
 	}
-	else echo "<div class='error'><p>ERROR: invalid page.</p></div>\n";
+	else echo "<div class='error'><p>ERROR: invalid page: '" . $page_id . "'</p></div>\n";
 }
 
 // Generate footer links

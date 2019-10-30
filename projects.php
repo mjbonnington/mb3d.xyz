@@ -10,7 +10,7 @@ if($q) {
 
 	else {
 		echo "\t\t\t<section class='gallery-wrapper'>\n";
-		$max_items = createGrid($db->job, $s, $num_items, 3, "media/", "3", (string)$page_path[0]->name, "category", false);
+		$max_items = createGrid($db->job, $s, $num_items, "media/", "2", (string)$page_path[0]->name, "category", false);
 		createNav($s, $num_items, $max_items, false);
 		echo "\t\t\t</section>\n";
 	}
@@ -18,7 +18,7 @@ if($q) {
 // If no category is specified, list first <$num_items> featured entries...
 } else {
 	echo "\t\t\t<section class='gallery-wrapper'>\n";
-	$max_items = createGrid($db->job, $s, $num_items, 3, "media/", "4");
+	$max_items = createGrid($db->job, $s, $num_items, "media/", "3");
 	// createNav($s, $num_items, $max_items);
 	echo "\t\t\t</section>\n";
 }
