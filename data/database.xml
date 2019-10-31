@@ -57,11 +57,6 @@
 		</subpage>
 		<subpage id="spacer">
 		</subpage>
-		<subpage id="reel">
-			<name>TANDEM Showreel</name>
-			<status>3-visible</status>
-			<link>http://reels.sohosoho.tv/xhtml=EJAM7WVO</link>
-		</subpage>
 	</page>
 
 	<page id="contact">
@@ -89,7 +84,7 @@
 		<status>0-hidden</status>
 	</page>
 
-	<job id="unique_job_id">
+	<job id="unique-job-id">
 		<name>Template Job</name>
 		<status>0-hidden</status>
 		<category>Commercials / Broadcast / Film / Shorts / Promos / Online / Other</category>
@@ -99,8 +94,9 @@
 		<brand>Name of brand</brand>
 		<date>YYYYMM</date>
 		<caption>Some optional text to appear beneath the job thumbnail</caption>
-		<description>A short description of the job. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id justo tortor, id suscipit ligula. In hac habitasse platea dictumst. Sed erat lorem, congue cursus placerat eget, semper in ligula. Curabitur vitae elit nisi, sit amet varius risus. In dignissim facilisis justo et eleifend. Etiam eget tellus adipiscing arcu fermentum laoreet. Sed at sem mi, id eleifend nibh. Morbi cursus ornare elit, quis tempus felis sagittis id. Aliquam velit massa, bibendum nec ullamcorper ut, pulvinar dignissim mauris. Phasellus vitae fringilla tellus. Nam pharetra arcu a lacus imperdiet eu hendrerit tortor posuere. Nunc est lacus, semper eget scelerisque non, laoreet quis odio.</description>
-		<media>http://path.to/movie_file</media>
+		<description link="http://path.to/markdown_file">A short description of the job. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id justo tortor, id suscipit ligula. In hac habitasse platea dictumst. Sed erat lorem, congue cursus placerat eget, semper in ligula. Curabitur vitae elit nisi, sit amet varius risus. In dignissim facilisis justo et eleifend. Etiam eget tellus adipiscing arcu fermentum laoreet. Sed at sem mi, id eleifend nibh. Morbi cursus ornare elit, quis tempus felis sagittis id. Aliquam velit massa, bibendum nec ullamcorper ut, pulvinar dignissim mauris. Phasellus vitae fringilla tellus. Nam pharetra arcu a lacus imperdiet eu hendrerit tortor posuere. Nunc est lacus, semper eget scelerisque non, laoreet quis odio.</description>
+		<movie link="http://path.to/movie_file"/>
+		<image link="http://path.to/image_file"/>
 		<credit role="Director">Joe Bloggs</credit>
 		<credit role="Animation Director">Mike Hunt</credit>
 		<credit role="3D Artist">Fred Bloggs</credit>
@@ -108,17 +104,34 @@
 		<credit role="Producer">John Smith</credit>
 		<tags>CGI, 2D, Stop-motion, Live action</tags>
 	</job>
+	<job id="knorr-butterfly">
+		<name>Butterfly</name>
+		<status>3-featured</status>
+		<category>Commercials</category>
+		<studio>UNIT</studio>
+		<agency>Mullen Lowe</agency>
+		<client>Unilever</client>
+		<brand>Knorr</brand>
+		<date>201901</date>
+		<description link="http://path.to/markdown_file"/>
+		<movie link="http://path.to/movie_file"/>
+		<image link="http://path.to/image_file"/>
+		<credit role="Director">Michael Geoghegan</credit>
+		<tags></tags>
+		<tagssw></tagssw>
+	</job>
 	<job id="rbl-rethink-remembrance">
 		<name>Rethink Remembrance</name>
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<format>30&amp;quot; TV commercial, digital</format>
+		<format>30&amp;quot; TV commercial, online</format>
 		<studio>Gramercy Park Studios</studio>
 		<client>Royal British Legion</client>
 		<date>201711</date>
-		<description></description>
-		<movie1>rbl_rethink_remembrance_30</movie1>
-		<tags>3D, Modelling, Texturing, Lighting, FX, Fur, Rendering, Compositing</tags>
+		<description link=""/>
+		<movie link="media/rbl-rethink-remembrance-h264-1080p.mp4"/>
+		<tags>Lookdev, Lighting, Groom, Comp</tags>
+		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="sensodyne-tag">
 		<status>2-live</status>
@@ -166,13 +179,14 @@
 		<format>30&amp;quot; TV commercial</format>
 		<client>Nestle</client>
 		<brand>Butterfinger</brand>
-		<agency></agency>
+		<agency>Santo</agency>
 		<studio>Gramercy Park Studios</studio>
 		<credit role="Director">Armando Bo</credit>
-		<description>Description</description>
+		<description link=""/>
 		<movie link="media/butterfinger-bolder-than-bold-dir-cut-h264-1080p.mp4"/>
 		<image link="media/butterfinger-bolder-than-bold-sh060.jpg"/>
-		<tags>3D, Creatures, Modelling, Lookdev, Texturing, Lighting, FX, Fur, Compositing, Photorealism, Maya, Xgen, Redshift, Nuke</tags>
+		<tags>Creature, Layout, Modelling, Lookdev, Lighting, Groom, Comp</tags>
+		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="heinz-beanz">
 		<status>2-live</status>
@@ -193,11 +207,11 @@
 	<job id="listerine-advanced-white">
 		<status>2-live</status>
 		<category>Commercials</category>
-		<name>Listerine Advanced White</name>
+		<name>Advanced White</name>
 		<format>30&amp;quot; TV commercial</format>
-		<client>Nestle</client>
+		<client>Johnson &amp;amp; Johnson</client>
 		<brand>Listerine</brand>
-		<agency></agency>
+		<agency>JWT London</agency>
 		<studio>Gramercy Park Studios</studio>
 		<date>201506</date>
 		<description></description>
@@ -205,7 +219,8 @@
 		<image1>listerine_advanced_white_01</image1>
 		<image2>listerine_advanced_white_02</image2>
 		<image3>listerine_advanced_white_03</image3>
-		<tags>3D, Modelling, Rigging, Lookdev, Texturing, Lighting, Compositing</tags>
+		<tags>Layout, Modelling, Rigging, Lookdev, Lighting, Comp</tags>
+		<tagssw>Maya, Vray, Nuke</tagssw>
 	</job>
 	<job id="homebase-xmas">
 		<status>2-live</status>
@@ -227,12 +242,12 @@
 		<status>3-featured</status>
 		<category>Commercials</category>
 		<name>World Cup Cashout</name>
+		<date>201406</date>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Betfair</client>
 		<brand>Betfair</brand>
-		<agency></agency>
+		<agency>WCRS / Hogarth Worldwide</agency>
 		<studio>Gramercy Park Studios</studio>
-		<date>201406</date>
 		<description></description>
 		<movie1>betfair_world_cup_cashout_30</movie1>
 		<image1>betfair_world_cup_cashout_01</image1>
@@ -255,16 +270,29 @@
 		<description link="media/betfair-this-is-play-description.md"/>
 		<movie link="media/betfair-this-is-play-h264-1080p.mp4"/>
 		<image link="media/betfair-this-is-play-sh160.jpg"/>
-		<tags>Commercials, 3D, Creatures, Lookdev, Texturing, Set reconstruction, Lighting, Photorealism, Maya, V-Ray, PFTrack, Nuke</tags>
+		<tags>Creature, Lookdev, Lighting, Matchmove, Set reconstruction</tags>
+		<tagssw>Maya, V-Ray, PFTrack, Nuke</tagssw>
 	</job>
-	<job id="bacardi-otard-xo">
+	<job id="ford-vw-vfx-tests">
+		<status>3-featured</status>
+		<category>Other</category>
+		<name>VFX tests</name>
+		<brand>Ford</brand>
+		<date>201508</date>
+		<studio>Gramercy Park Studios</studio>
+		<description link="media/ford-vw-vfx-tests-description.md"/>
+		<movie link="media/ford-vw-vfx-tests-h264-1080p.mp4"/>
+		<image link=""/>
+		<tags>Matchmove, Modelling, Lookdev, Lighting, Comp</tags>
+		<tagssw>Maya, V-Ray, Photoshop, PFTrack, Nuke</tagssw>
+	</job>
+	<job id="baron-otard-xo">
 		<status>2-live</status>
 		<category>Commercials</category>
 		<name>Baron Otard XO</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Bacardi</client>
 		<brand>Baron Otard</brand>
-		<agency></agency>
 		<studio>Gramercy Park Studios</studio>
 		<director>Nuno Pereira</director>
 		<date>201405</date>
@@ -291,17 +319,19 @@
 		<image3>irobot_scooba_model</image3>
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
-	<job id="itv1-celeb">
+	<job id="itv-im-a-celeb">
 		<status>2-live</status>
 		<category>Broadcast</category>
 		<name>I'm a Celebrity - Get Me Out Of Here!</name>
 		<format>4x 5-10&amp;quot; bumpers</format>
 		<client>ITV</client>
+		<brand>ITV1</brand>
 		<agency>Fold7</agency>
 		<date>201011</date>
 		<description>Four short teasers for the 2010 series of &amp;quot;I'm a Celebrity...&amp;quot; which see the ITV1 logo being torn apart by creeping vines, wrapped in a spider's web, sinking into quicksand and finally gobbled up by a venus fly trap. I worked exclusively on the vines spot, which posed many 3D challenges including the creation of a realistic mossy, barky procedural texture for the vines, giving the logo a dirty, weathered look, bringing the vines to life with a creepy, time-lapse style of animation and cracking and breaking the logo into pieces.</description>
 		<movie1>itv1_celeb_vines_10</movie1>
-		<tags>3D, Modelling, Texturing, Procedural Shaders, Animation, Lighting, Rendering</tags>
+		<tags>Modelling, Rigging, Animation, Lookdev, Lighting</tags>
+		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="waiting">
 		<status>2-live</status>
@@ -347,10 +377,10 @@
 		<description>I did visual effects work on two sequences in the latest Harry Potter: firstly a scene in the woods where Harry, Hermione and Ron attempt to destroy a horcrux - a locket with mystical powers. I animated the locket itself and used hair simulation dynamics to create the locket's chain. Secondly, in which Bellatrix (played by Helena Bonham-Carter) uses a magic spell which causes a black snake to materialise and strangle her adversary. This was the first creature work I had done in a while and I modelled, textured and lit the snake.</description>
 		<tags>3D, Modelling, Texturing, Lighting, Rendering</tags>
 	</job>
-	<job id="tuborg-idents">
+	<job id="tuborg-music-idents">
 		<status>3-featured</status>
 		<category>Commercials</category>
-		<name>Tuborg Music Idents</name>
+		<name>Music Idents</name>
 		<format>4x 15&amp;quot; TV idents</format>
 		<client>Carsberg</client>
 		<brand>Tuborg</brand>
@@ -363,7 +393,8 @@
 		<movie2>tuborg_dance_15</movie2>
 		<image1>tuborg_festival_01</image1>
 		<image2>tuborg_dance_01</image2>
-		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering</tags>
+		<tags>Modelling, Animation, Lookdev, Lighting, FX</tags>
+		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="african-football">
 		<status>0-hidden</status>
@@ -380,12 +411,12 @@
 		<status>3-featured</status>
 		<category>Shorts</category>
 		<name>Turning</name>
+		<caption>BAFTA nominated</caption>
 		<format>Short film</format>
 		<agency>Rokkit/Stink</agency>
 		<director>Karni + Saul</director>
 		<date>200911</date>
-		<description>In this beautifully realised short film from directing duo Karni and Saul, a young boy receives three old ladies in his mother's sitting room on his sixth birthday. The ten minute film uses a combination of live action with both stop-frame and CG animation to deliver its dark and dreamlike vision of hazy childhood memory and imagination, My contribution to this was a scene where an elaborately wrapped present scuttles across the floor, spider-like, with ribbons as legs. 'Turning' was nominated for Best Short Film in the 2011 BAFTA awards.
-</description>
+		<description>In this beautifully realised short film from directing duo Karni and Saul, a young boy receives three old ladies in his mother's sitting room on his sixth birthday. The ten minute film uses a combination of live action with both stop-frame and CG animation to deliver its dark and dreamlike vision of hazy childhood memory and imagination. My contribution to this was a scene where an elaborately wrapped present scuttles across the floor, spider-like, with ribbons as legs. 'Turning' was nominated for Best Short Film in the 2011 BAFTA awards.</description>
 		<url>http://www.bbc.co.uk/filmnetwork/films/p00cld4n</url>
 		<movie1>turning_present</movie1>
 		<image1>turning_01</image1>
@@ -601,7 +632,8 @@
 		<image1>cocopops_cupboard_01</image1>
 		<image2>cocopops_cupboard_02</image2>
 		<image3>cocopops_cupboard_03</image3>
-		<tags>3D, Modelling, Texturing, Procedural Shaders, Animation, Particles, Lighting, Rendering, Matchmoving, Compositing, Photorealism</tags>
+		<tags>Modelling, Animation, FX, Lookdev, Lighting, Matchmove, Comp</tags>
+		<tagssw>Maya, mentalray, Boujou, Photoshop, After Effects</tagssw>
 	</job>
 	<job id="delinquent">
 		<status>2-live</status>

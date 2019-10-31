@@ -13,7 +13,7 @@ shuffle($rand_jobs);
 ?>
 
 			<header class='header'>
-				<img src='images/mb3d-logo.svg' width='160' alt='MB3D logo'/>
+				<img src='images/mb3d-logo-mono.svg' width='160' alt='MB3D logo'/>
 				<h1 class='title'>Michael Bonnington</h1>
 				<h2 class='subtitle'>{ 3D&nbsp;Artist; CG&nbsp;Supervisor; VFX&nbsp;Pipeline&nbsp;Developer }</h2>
 				<!-- <ul class='subtitle'>

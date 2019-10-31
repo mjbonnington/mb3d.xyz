@@ -78,6 +78,53 @@ function parseDate($input_date, $long=true) {
 	else return $mm . "/" . $yyyy;
 }
 
+// Get the nicest title and subtitle for a specified job, return an array containing the title and subtitle element
+function getJobTitle(&$job) {
+	if($job->brand) {
+		$title = $job->brand;
+		$subtitle = $job->name;
+	} elseif($job->client) {
+		$title = $job->client;
+		$subtitle = $job->name;
+	} else {
+		$title = $job->name;
+		$subtitle = "&nbsp;";
+	}
+
+	return [$title, $subtitle];
+}
+
+// Output HTML for a job's tags. Indentation not working. This can be cleaned up a lot
+function getJobTags(&$job, $indent=0) {
+	// Create indentation
+	for($i=0; $i<$indent; $s++) {
+		$ind .= "\t";
+	}
+	// echo "\t\t\t\t\t<div class='tags'>\n";
+	if($r) {
+		echo $ind . "<a class='tag category' href='category/" . $job->category . "'>" . $job->category . "</a>\n";
+	} else {
+		echo $ind . "<a class='tag category' href='?p=search&amp;s=category&amp;q=" . $job->category . "'>" . $job->category . "</a>\n";
+	}
+	$tags = explode(", ", $job->tags);
+	foreach($tags as $tag) {
+		if($r) {
+			echo $ind . "<a class='tag' href='tag/" . $tag . "'>" . $tag . "</a>\n";
+		} else {
+			echo $ind . "<a class='tag' href='?p=search&amp;s=tag&amp;q=" . $tag . "'>" . $tag . "</a>\n";
+		}
+	}
+	$tags_sw = explode(", ", $job->tagssw);
+	foreach($tags_sw as $tag) {
+		if($r) {
+			echo $ind . "<a class='tag sw' href='tag/" . $tag . "'>" . $tag . "</a>\n";
+		} else {
+			echo $ind . "<a class='tag sw' href='?p=search&amp;s=tag&amp;q=" . $tag . "'>" . $tag . "</a>\n";
+		}
+	}
+	// echo "\t\t\t\t\t</div>\n";
+}
+
 // Get site's meta tags
 function getMetaTags() {
 	global $db, $r;
@@ -182,7 +229,7 @@ function createMenu($page) {
 	global $db, $r;
 
 	echo "\t\t\t<header class='header-compact'>\n";
-	echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo.svg' width='100' alt='MB3D logo'/></a>\n";
+	echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo-mono.svg' width='100' alt='MB3D logo'/></a>\n";
 	echo "\t\t\t\t<!-- <a href='sitemap.php'><img src='images/menu.svg' width='24' alt='Menu'/></a> -->\n";
 	echo "\n";
 	echo "\t\t\t\t<nav>\n";
@@ -256,16 +303,7 @@ function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshol
 				else $link = $hl["p"] . "job" . $hl["q"] . $item->attributes()->id;
 
 				// Generate title, subtitle and captions/badges...
-				if($item->brand) {
-					$title = $item->brand;
-					$subtitle = $item->name;
-				} elseif($item->client) {
-					$title = $item->client;
-					$subtitle = $item->name;
-				} else {
-					$title = $item->name;
-					$subtitle = "&nbsp;";
-				}
+				$titles = getJobTitle($item);
 
 				// Check job thumbnail exists, otherwise use placeholder...
 				$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
@@ -278,8 +316,8 @@ function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshol
 				echo "\t\t\t\t\t\t<a href='" . $link . "'>\n";
 				echo "\t\t\t\t\t\t\t<img src='" . $img_src . "' alt='" . $item->name . "'/>\n";
 				echo "\t\t\t\t\t\t\t<span class='gallery-item-title'>\n";
-				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $title . "</h1>\n";  // use client if brand is empty
-				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $subtitle . "</h2>\n";
+				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $titles[0] . "</h1>\n";
+				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $titles[1] . "</h2>\n";
 				echo "\t\t\t\t\t\t\t</span>\n";
 				echo "\t\t\t\t\t\t</a>\n";
 				echo "\t\t\t\t\t</div>\n";
@@ -385,10 +423,10 @@ function includePage($page_id) {
 
 		else
 		{
-			echo "<div class='error'><p>ERROR: '" . $page_id . "' page does not exist.</p></div>\n";
+			echo "<div class='error'>Page not found: '" . $page_id . "'</div>\n";
 		}
 	}
-	else echo "<div class='error'><p>ERROR: invalid page: '" . $page_id . "'</p></div>\n";
+	else echo "<div class='error'>Invalid page: '" . $page_id . "'</div>\n";
 }
 
 // Generate footer links

@@ -5,7 +5,7 @@ echo "\t<h3>Sitemap</h3>\n";
 echo "\t<div class='columns3'>\n";
 echo "\t\t<ul>\n";
 
-foreach($db->pages->page as $i) {
+foreach($db->page as $i) {
 	if($i->status > "1" && $i->attributes()->id != "spacer") {
 		if($i->link) $link = $i->link;
 		else $link = $hl["p"] . $i->attributes()->id;

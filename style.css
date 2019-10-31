@@ -87,7 +87,7 @@ a.tag {
 	border-radius: 4px;
 	/*overflow: hidden;*/
 	white-space: nowrap;
-	background: #517081;
+	background: #567585;
 	color: #000;
 	/*opacity: 0.75;*/
 	font-size: 80%;
@@ -111,7 +111,7 @@ a.tag:hover {
 }
 
 pre {
-	background: #abc;
+	background: #000;
 }
 
 img {
@@ -139,7 +139,7 @@ hr {
 	padding: 96px 24px;
 	padding-top: 48px;
 	color: #999;
-	background-color: #23282d;
+	background-color: #24272e;
 }
 
 .header-compact {
@@ -149,7 +149,7 @@ hr {
 	align-items: center;
 	padding: 16px 24px;
 	color: #999;
-	background-color: #23282d;
+	background-color: #24272e;
 }
 
 /*.header-compact img {
@@ -230,7 +230,7 @@ hr {
 .body-text {
 	max-width: 720px;
 	margin: 40px 0;
-	padding: 48px;
+	padding: 24px;
 }
 
 .body-text p {
@@ -256,7 +256,7 @@ hr {
 .video-description {
 	position: relative;
 	margin: 40px 0;
-	padding: 48px;
+	padding: 24px;
 	max-width: 720px;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 10pt;
@@ -370,6 +370,7 @@ hr {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	/*color: #33d4a7;*/
 }
 
 .subtitle {
@@ -400,10 +401,10 @@ hr {
 	justify-content: space-between;
 	align-items: center;
 	padding: 96px 24px;
-	padding-top: 48px;
+	/*padding-top: 48px;*/
 	font-family: 'Fira Sans', sans-serif;
 	color: #fff;
-	background-color: #d62e3d;
+	background-color: #de434a;
 }
 
 .footer-wrapper {
@@ -483,6 +484,7 @@ hr {
 @media only screen and (min-width: 961px) {
 	.body-text {
 		margin: 40px 24px;
+		padding: 48px;
 		border: 1px solid #333;
 	}
 
@@ -493,6 +495,7 @@ hr {
 
 	.video-description {
 		margin: 40px 24px;
+		padding: 48px;
 	}
 
 	.tags {
