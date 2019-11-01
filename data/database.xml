@@ -87,7 +87,7 @@
 	<job id="unique-job-id">
 		<name>Template Job</name>
 		<status>0-hidden</status>
-		<category>Commercials / Broadcast / Film / Shorts / Promos / Online / Other</category>
+		<category>Commercials, Broadcast, Film, Shorts, Promos, Online, Other</category>
 		<studio>Name of production studio</studio>
 		<agency>Name of agency</agency>
 		<client>Name of client</client>
@@ -103,6 +103,7 @@
 		<credit role="Compositor">A.N. Other</credit>
 		<credit role="Producer">John Smith</credit>
 		<tags>CGI, 2D, Stop-motion, Live action</tags>
+		<tagssw>Maya, Arnold, Nuke</tagssw>
 	</job>
 	<job id="knorr-butterfly">
 		<name>Butterfly</name>
@@ -113,12 +114,12 @@
 		<client>Unilever</client>
 		<brand>Knorr</brand>
 		<date>201901</date>
-		<description link="http://path.to/markdown_file"/>
-		<movie link="http://path.to/movie_file"/>
-		<image link="http://path.to/image_file"/>
+		<description link="media/knorr-butterfly-description.md"/>
+		<movie link="media/knorr-butterfly-h264-1080p.mp4"/>
+		<image link="media/knorr-butterfly-kri004.jpg"/>
 		<credit role="Director">Michael Geoghegan</credit>
-		<tags></tags>
-		<tagssw></tagssw>
+		<tags>Modelling, Lookdev, Lighting, FX</tags>
+		<tagssw>Maya, Houdini, Arnold</tagssw>
 	</job>
 	<job id="rbl-rethink-remembrance">
 		<name>Rethink Remembrance</name>
@@ -126,15 +127,17 @@
 		<category>Commercials</category>
 		<format>30&amp;quot; TV commercial, online</format>
 		<studio>Gramercy Park Studios</studio>
+		<agency>Y&amp;amp;R London</agency>
 		<client>Royal British Legion</client>
 		<date>201711</date>
-		<description link=""/>
+		<description link="media/rbl-rethink-remembrance-description.md"/>
 		<movie link="media/rbl-rethink-remembrance-h264-1080p.mp4"/>
+		<image link="media/rbl-rethink-remembrance-sh010.jpg"/>
 		<tags>Lookdev, Lighting, Groom, Comp</tags>
 		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="sensodyne-tag">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Endframe tag</name>
 		<format></format>
@@ -158,7 +161,7 @@
 		<tags>3D, Modelling, Matchmove, Lookdev, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="c5-big-brother">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Broadcast</category>
 		<name>Big Brother</name>
 		<format>30&amp;quot; teaser trailer</format>
@@ -189,7 +192,7 @@
 		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="heinz-beanz">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Baked Beans</name>
 		<format></format>
@@ -215,15 +218,13 @@
 		<studio>Gramercy Park Studios</studio>
 		<date>201506</date>
 		<description></description>
-		<movie1>listerine_advanced_white_30</movie1>
-		<image1>listerine_advanced_white_01</image1>
-		<image2>listerine_advanced_white_02</image2>
-		<image3>listerine_advanced_white_03</image3>
+		<movie link="media/listerine-advanced-white-h264-1080p.mp4"/>
+		<image link="media/listerine-advanced-white-sh030.jpg"/>
 		<tags>Layout, Modelling, Rigging, Lookdev, Lighting, Comp</tags>
-		<tagssw>Maya, Vray, Nuke</tagssw>
+		<tagssw>Maya, V-Ray, Nuke</tagssw>
 	</job>
 	<job id="homebase-xmas">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Homebase Xmas</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -238,6 +239,19 @@
 		<image3>homebase_xmas_03</image3>
 		<tags>3D, Matchmove, Modelling, Lookdev, Texturing, Lighting, Compositing, Photorealism</tags>
 	</job>
+	<job id="the-louvre">
+		<name>The Louvre Installation</name>
+		<status>2-live</status>
+		<category>Other</category>
+		<studio>Gramercy Park Studios</studio>
+		<client>Mark Lewis</client>
+		<date>201409</date>
+		<description link="media/the-louvre-description.md"/>
+		<movie link="media/the-louvre-h264-1080p.mp4"/>
+		<image link="media/the-louvre-sh010.jpg"/>
+		<tags>Modelling, Photogrammetry, Texturing, Comp, VR</tags>
+		<tagssw>Maya, Photoshop, Photoscan, Nuke</tagssw>
+	</job>
 	<job id="betfair-world-cup-cashout">
 		<status>3-featured</status>
 		<category>Commercials</category>
@@ -248,12 +262,11 @@
 		<brand>Betfair</brand>
 		<agency>WCRS / Hogarth Worldwide</agency>
 		<studio>Gramercy Park Studios</studio>
-		<description></description>
-		<movie1>betfair_world_cup_cashout_30</movie1>
-		<image1>betfair_world_cup_cashout_01</image1>
-		<image2>betfair_world_cup_cashout_02</image2>
-		<image3>betfair_world_cup_cashout_03</image3>
-		<tags>3D, Modelling, Lookdev, Texturing, Lighting, Photorealism</tags>
+		<description link="media/betfair-world-cup-cashout-description.md"/>
+		<movie link="media/betfair-world-cup-cashout-h264-1080p.mp4"/>
+		<image link="media/betfair-world-cup-cashout-sh110.jpg"/>
+		<tags>Creature, Lookdev, Lighting, Set reconstruction</tags>
+		<tagssw>Maya, V-Ray, Nuke</tagssw>
 	</job>
 	<job id="betfair-this-is-play">
 		<status>3-featured</status>
@@ -273,17 +286,33 @@
 		<tags>Creature, Lookdev, Lighting, Matchmove, Set reconstruction</tags>
 		<tagssw>Maya, V-Ray, PFTrack, Nuke</tagssw>
 	</job>
-	<job id="ford-vw-vfx-tests">
+	<job id="betfair-lets-play-nj">
+		<status>2-live</status>
+		<category>Commercials</category>
+		<name>Let's Play NJ</name>
+		<date>201312</date>
+		<format>30&amp;quot; TV commercial</format>
+		<client>Betfair</client>
+		<brand>Betfair</brand>
+		<agency>WCRS</agency>
+		<studio>Gramercy Park Studios</studio>
+		<description link="media/betfair-lets-play-nj-description.md"/>
+		<movie link="media/betfair-lets-play-nj-h264-1080p.mp4"/>
+		<image link="media/betfair-lets-play-nj-sh020.jpg"/>
+		<tags>Layout, Modelling, Lookdev, Lighting, Design</tags>
+		<tagssw>Maya, V-Ray, After Effects, Nuke</tagssw>
+	</job>
+	<job id="ford-vw-cg-breakdown">
 		<status>3-featured</status>
 		<category>Other</category>
-		<name>VFX tests</name>
+		<name>CG breakdown</name>
 		<brand>Ford</brand>
 		<date>201508</date>
 		<studio>Gramercy Park Studios</studio>
-		<description link="media/ford-vw-vfx-tests-description.md"/>
-		<movie link="media/ford-vw-vfx-tests-h264-1080p.mp4"/>
-		<image link=""/>
-		<tags>Matchmove, Modelling, Lookdev, Lighting, Comp</tags>
+		<description link="media/ford-vw-cg-breakdown-description.md"/>
+		<movie link="media/ford-vw-cg-breakdown-h264-1080p.mp4"/>
+		<image link="media/ford-vw-cg-breakdown.jpg"/>
+		<tags>Matchmove, Modelling, Lookdev, Lighting, DMP, Comp</tags>
 		<tagssw>Maya, V-Ray, Photoshop, PFTrack, Nuke</tagssw>
 	</job>
 	<job id="baron-otard-xo">
@@ -292,19 +321,31 @@
 		<name>Baron Otard XO</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Bacardi</client>
-		<brand>Baron Otard</brand>
 		<studio>Gramercy Park Studios</studio>
 		<director>Nuno Pereira</director>
 		<date>201405</date>
-		<description></description>
-		<movie1>bacardi_otard_xo_30</movie1>
-		<image1>bacardi_otard_xo_01</image1>
-		<image2>bacardi_otard_xo_02</image2>
-		<image3>bacardi_otard_xo_03</image3>
-		<tags>3D, Modelling, Texturing, Lighting, Photorealism</tags>
+		<description link="media/baron-otard-xo-description.md"/>
+		<movie link="media/baron-otard-xo-h264-1080p.mp4"/>
+		<image link="media/baron-otard-xo.jpg"/>
+		<tags>Layout, Modelling, Animation, Lookdev, Lighting, Comp</tags>
+		<tagssw>Maya, V-Ray, Nuke</tagssw>
+	</job>
+	<job id="boss-orange-packshot">
+		<status>2-live</status>
+		<category>Commercials</category>
+		<name>Boss Orange</name>
+		<format>Packshot</format>
+		<brand>Hugo Boss</brand>
+		<studio>Hogarth Worldwide</studio>
+		<date>201211</date>
+		<description link="media/boss-orange-packshot-description.md"/>
+		<movie link="media/boss-orange-packshot-h264-1080p.mp4"/>
+		<image link="media/boss-orange-packshot.jpg"/>
+		<tags>Layout, Modelling, Lookdev, Lighting</tags>
+		<tagssw>Maya, mentalray</tagssw>
 	</job>
 	<job id="irobot">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>iRobot</name>
 		<format>5x 15&amp;quot; web commercials</format>
@@ -329,12 +370,13 @@
 		<agency>Fold7</agency>
 		<date>201011</date>
 		<description>Four short teasers for the 2010 series of &amp;quot;I'm a Celebrity...&amp;quot; which see the ITV1 logo being torn apart by creeping vines, wrapped in a spider's web, sinking into quicksand and finally gobbled up by a venus fly trap. I worked exclusively on the vines spot, which posed many 3D challenges including the creation of a realistic mossy, barky procedural texture for the vines, giving the logo a dirty, weathered look, bringing the vines to life with a creepy, time-lapse style of animation and cracking and breaking the logo into pieces.</description>
-		<movie1>itv1_celeb_vines_10</movie1>
+		<movie link="media/itv-im-a-celeb-vines-h264-1080p.mp4"/>
+		<image link="media/itv-im-a-celeb-vines.jpg"/>
 		<tags>Modelling, Rigging, Animation, Lookdev, Lighting</tags>
 		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="waiting">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Promos</category>
 		<name>I'll Be Waiting</name>
 		<format>Music Video</format>
@@ -349,7 +391,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Editing</tags>
 	</job>
 	<job id="sun-race">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<brand>Sun</brand>
 		<name>Race</name>
@@ -365,7 +407,7 @@
 		<tags>3D, Pre-viz, Modelling, Animation</tags>
 	</job>
 	<job id="hp7a-vfx">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Film</category>
 		<brand>Harry Potter</brand>
 		<name>and the Deathly Hallows</name>
@@ -375,7 +417,7 @@
 		<director>David Yates</director>
 		<date>201007</date>
 		<description>I did visual effects work on two sequences in the latest Harry Potter: firstly a scene in the woods where Harry, Hermione and Ron attempt to destroy a horcrux - a locket with mystical powers. I animated the locket itself and used hair simulation dynamics to create the locket's chain. Secondly, in which Bellatrix (played by Helena Bonham-Carter) uses a magic spell which causes a black snake to materialise and strangle her adversary. This was the first creature work I had done in a while and I modelled, textured and lit the snake.</description>
-		<tags>3D, Modelling, Texturing, Lighting, Rendering</tags>
+		<tags>Modelling, Lookdev, Lighting, Creature</tags>
 	</job>
 	<job id="tuborg-music-idents">
 		<status>3-featured</status>
@@ -388,12 +430,10 @@
 		<studio>WeR3D</studio>
 		<director>Paul Clements</director>
 		<date>201002</date>
-		<description>Tuborg, the Danish beer owned by Carlsberg, has recently become sponsors of festivals and music events throughout Europe, and these idents were created for this purpose. I worked on two of the four, 'Festival' and 'Dance', the other two being 'Indie' and 'Hip-Hop'. The work mostly involved preparation of pre-supplied high detail models, to make them suitable for animation and deformation. This usually involved extensive re-modelling. I then animated the various guitars, amps, speakers and the like to swoop around the bottle. I also made Maya hair based dynamics for some of the cables. In addition I developed shaders and lighting resulting in the finished look.</description>
-		<movie1>tuborg_festival_15</movie1>
-		<movie2>tuborg_dance_15</movie2>
-		<image1>tuborg_festival_01</image1>
-		<image2>tuborg_dance_01</image2>
-		<tags>Modelling, Animation, Lookdev, Lighting, FX</tags>
+		<description>Tuborg, the Danish beer owned by Carlsberg, has recently become sponsors of festivals and music events throughout Europe, and these idents were created for this purpose. I mainly worked on two of the four, 'Festival' and 'Dance', the other two being 'Indie' and 'Hip-Hop'. The work mostly involved preparation of pre-supplied high detail models, to make them suitable for animation and deformation. This usually involved extensive re-modelling. I then animated the various guitars, amps, speakers and the like to swoop around the bottle. I also made Maya hair based dynamics for some of the cables. In addition I developed shaders and lighting resulting in the finished look.</description>
+		<movie link="media/tuborg-music-idents-h264-1080p.mp4"/>
+		<image link="media/tuborg-music-idents-dance.jpg"/>
+		<tags>Modelling, Animation, Lookdev, Lighting, FX, Design</tags>
 		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="african-football">
@@ -408,7 +448,7 @@
 		<date>200912</date>
 	</job>
 	<job id="turning">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Shorts</category>
 		<name>Turning</name>
 		<caption>BAFTA nominated</caption>
@@ -421,10 +461,10 @@
 		<movie1>turning_present</movie1>
 		<image1>turning_01</image1>
 		<image2>turning_02</image2>
-		<tags>3D, Animation, Rigging, Lighting, Rendering, Matchmoving</tags>
+		<tags>3D, Animation, Rigging, Lighting, Rendering, Matchmove</tags>
 	</job>
 	<job id="f1-rocks">
-		<status>3-featured</status>
+		<status>2-live</status>
 		<category>Broadcast</category>
 		<name>F1 Rocks</name>
 		<format>30&amp;quot; TV title sequence</format>
@@ -434,14 +474,13 @@
 		<director>Fredrik Nordbeck</director>
 		<date>200909</date>
 		<description>A 'music and motorsport extravaganza', F1 Rocks is a series of rock concerts coinciding with Formula 1 Grand Prix race weekends in cities across the world. The inaugural show was held in Singapore on the 24th-26th September, and this is the 30 second opening titles for the televised event, to be shown in over 40 countries. Production was a combination of 2D and 3D, with creation of the 3D scenes including camera animation created by myself in Maya, then exported to After Effects where additional imagery and particle simulations could be added to the scene. I modelled a number of 3D elements, including the F1 car, for which I then developed rendering and post-production techniques to produce the final, abstract look.</description>
-		<movie1>f1rocks_30</movie1>
-		<image1>f1rocks_01</image1>
-		<image2>f1rocks_02</image2>
-		<image3>f1rocks_03</image3>
-		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing</tags>
+		<movie link="media/f1-rocks-h264-pal16x9.mp4"/>
+		<image link="media/f1-rocks.jpg"/>
+		<tags>Layout, Design, Modelling, Animation, Lookdev, Comp</tags>
+		<tagssw>Maya, After Effects</tagssw>
 	</job>
 	<job id="shu-uemura">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Shu Uemura Bento Box</name>
 		<format>Product demo</format>
@@ -456,7 +495,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="hp6-titles">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Film</category>
 		<brand>Harry Potter</brand>
 		<name>and the Half-Blood Prince</name>
@@ -491,7 +530,7 @@
 		<tags>3D, Fluids</tags>
 	</job>
 	<job id="kswiss-mtv">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Remaster the Classic</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -507,7 +546,7 @@
 		<tags>3D, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="rbs-idents">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>C4 Idents</name>
 		<format>6x 5-15&amp;quot; idents</format>
@@ -523,7 +562,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Toon Shading</tags>
 	</job>
 	<job id="samsung-attraction">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Attraction</name>
 		<format>2x 30&amp;quot; TV commercials</format>
@@ -540,7 +579,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Photorealism</tags>
 	</job>
 	<job id="market-kitchen">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Broadcast</category>
 		<name>Market Kitchen</name>
 		<format>TV titles</format>
@@ -556,7 +595,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="halfords-santa">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Santa</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -573,7 +612,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="cdm-gorilla">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Gorilla</name>
 		<format>90&amp;quot; TV commercial</format>
@@ -590,7 +629,7 @@
 		<tags>3D, Modelling, Texturing</tags>
 	</job>
 	<job id="davidcairnsphoto">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Web</category>
 		<name>David Cairns: Photographer</name>
 		<format>Flash web site</format>
@@ -601,7 +640,7 @@
 		<tags>HTML, Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="fairy-sparkle">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Sparkle</name>
 		<format>20&amp;quot; TV commercial</format>
@@ -627,16 +666,14 @@
 		<studio>Tandem</studio>
 		<director>Tony Mines</director>
 		<date>200703</date>
-		<description>This 30 second CG/stop-frame TV and cinema spot is something of a departure from conventional cereal adverts. Coco Pops mascot Coco the Monkey has been relegated to a cameo role on the side of the cereal box, this time the real stars are the Coco Pops themselves. The CG elements needed to match the look of the stop frame animation, which provided some interesting challenges: in one shot I had to recreate the fan in CG, as the stop motion animators had forgotten to turn the fan blades! My main task was to develop a procedural generator to create the Coco Pops models and shaders.</description>
-		<movie1>cocopops_cupboard_30</movie1>
-		<image1>cocopops_cupboard_01</image1>
-		<image2>cocopops_cupboard_02</image2>
-		<image3>cocopops_cupboard_03</image3>
+		<description link="media/coco-pops-cupboard-description.md"/>
+		<movie link="media/coco-pops-cupboard-h264-pal16x9.mp4"/>
+		<image link="media/coco-pops-cupboard-sh01.jpg"/>
 		<tags>Modelling, Animation, FX, Lookdev, Lighting, Matchmove, Comp</tags>
 		<tagssw>Maya, mentalray, Boujou, Photoshop, After Effects</tagssw>
 	</job>
 	<job id="delinquent">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Web</category>
 		<name>Delinquent</name>
 		<format>Flash web site</format>
@@ -647,7 +684,7 @@
 		<tags>Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="britishlibrary">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>British Library Sound Archive</name>
 		<format>Interactive display</format>
@@ -672,9 +709,10 @@
 		<director>Chris Cairns</director>
 		<date>200611</date>
 		<description>A sequence of four animations to be projected on to massive screens at eight outdoor locations throughout the UK, to promote the launch of BMW's new Mini. Each animation is triggered by a user stepping on an interactive floor projection. I created this 20 second sequence, handling all aspects of the production including the rigging and animation for the Mini, building the room with destructible walls, and all the texturing and lighting.</description>
-		<movie1>mini_lasers_20</movie1>
-		<image1>mini_lasers_01</image1>
-		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering</tags>
+		<movie link="media/mini-lasers-h264.mp4"/>
+		<image link="media/mini-lasers.jpg"/>
+		<tags>Modelling, Texturing, Animation, Lookdev, Lighting, FX</tags>
+		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="ribena-currant-affairs">
 		<status>3-featured</status>
@@ -687,15 +725,13 @@
 		<director>Mark Waring</director>
 		<date>200607</date>
 		<description>Plucked from a crate on the back of a Ribena truck by a greedy magpie, our blackcurrant hero is taken on a crazy, over-the-top ride. He gets sucked through a jet engine, freefalls through a hot air balloon's burners, gets shot at by a clay pigeon shooter, and plummets through the branches of a particularly spiky tree. This is the third commercial produced for Ribena, and it's a bit of a departure as it's almost entirely CG, unlike the previous two which were predominantly live action with CG elements. I modelled and textured the truck, and worked on lighting, rendering and compositing of the rest of the ad.</description>
-		<movie1>ribena_currantaffairs_30</movie1>
-		<movie2>ribena_truck_loop</movie2>
-		<image1>ribena_currantaffairs_01</image1>
-		<image2>ribena_currantaffairs_02</image2>
-		<image3>ribena_currantaffairs_03</image3>
-		<tags>3D, Modelling, Texturing, Rigging, Matchmoving, HDR, Lighting, Rendering, Photorealism</tags>
+		<movie link="media/ribena-currant-affairs-h264.mp4"/>
+		<image link="media/ribena-currant-affairs-sc01.jpg"/>
+		<tags>Matchmove, Layout, Modelling, Rigging, Lookdev, Lighting, Comp</tags>
+		<tagssw>Maya, mentalray, Boujou, Photoshop, After Effects</tagssw>
 	</job>
 	<job id="stickleback">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Web</category>
 		<name>Stickleback Music</name>
 		<format>Flash web site</format>
@@ -706,7 +742,7 @@
 		<tags>Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="xbox360-sploj">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Sploj</name>
 		<format>Web</format>
@@ -722,7 +758,7 @@
 		<tags>3D, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="insidestory">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Web</category>
 		<name>Inside Story: Physics in Medicine</name>
 		<format>Flash web site</format>
@@ -735,7 +771,7 @@
 		<tags>HTML, Flash, Game, Web Design, Programming</tags>
 	</job>
 	<job id="ribena-liquidator">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Liquidator</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
@@ -752,7 +788,7 @@
 		<tags>3D, Modelling, Animation, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
 	<job id="ribena-mud">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Mud on the Tracks</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
@@ -767,10 +803,10 @@
 		<image1>ribena_mud_01</image1>
 		<image2>ribena_mud_02</image2>
 		<image3>ribena_mud_03</image3>
-		<tags>3D, Modelling, Rigging, Matchmoving, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
+		<tags>3D, Modelling, Rigging, Matchmove, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
 	<job id="payback-parade">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Parade</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -787,7 +823,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="the-usual-suspect">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Shorts</category>
 		<name>The Usual Suspect</name>
 		<format>Short film</format>
@@ -802,7 +838,7 @@
 		<tags>3D, Particles, Compositing, Toon Shading</tags>
 	</job>
 	<job id="killzone">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Killzone</name>
 		<format>Shockwave web site</format>
@@ -815,7 +851,7 @@
 		<tags>3D, Texturing, Animation, Game, Shockwave</tags>
 	</job>
 	<job id="payback-winner">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Winner</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -832,7 +868,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="kumala-smooth">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Smooth</name>
 		<format>20&amp;quot; TV commercial</format>
@@ -850,7 +886,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Compositing</tags>
 	</job>
 	<job id="kumala-idents">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>ITV2 Movies</name>
 		<format>6x 10-15&amp;quot; idents</format>
@@ -867,7 +903,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="payback-starpramie">
-		<status>3-featured</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Starpramie</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -884,7 +920,7 @@
 		<tags>3D, Modelling, Texturing, Particles, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="chewits-auditions">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Auditions</name>
 		<format>40&amp;quot; TV/cinema commercial</format>
@@ -900,7 +936,7 @@
 		<tags>3D, Modelling, Texturing</tags>
 	</job>
 	<job id="payback-blueplanet">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Commercials</category>
 		<name>Blue Planet</name>
 		<format>30&amp;quot; + 7&amp;quot; TV commercial</format>
@@ -918,7 +954,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="getaway">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Games</category>
 		<name>The Getaway</name>
 		<format>PS2</format>
@@ -932,7 +968,7 @@
 		<tags>Game, 3D, Modelling, Texturing</tags>
 	</job>
 	<job id="pow">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Games</category>
 		<name>Prisoner of War</name>
 		<format>PS2, Xbox, PC</format>
@@ -946,7 +982,7 @@
 		<tags>Game, Cutscenes, Scripting, Design, Editing</tags>
 	</job>
 	<job id="tif2002">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Games</category>
 		<name>This Is Football 2002</name>
 		<format>PS2</format>
@@ -959,7 +995,7 @@
 		<tags>Game, 3D, Modelling, Texturing</tags>
 	</job>
 	<job id="the-last-bond">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Shorts</category>
 		<name>The Last Bond</name>
 		<format>Short film</format>
@@ -973,7 +1009,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Facial Animation, Animation, Lighting, Editing, Toon Shading, Student</tags>
 	</job>
 	<job id="boonataxi">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Boona Taxi</name>
 		<format>PC, IRIX</format>
@@ -983,7 +1019,7 @@
 		<tags>3D, Modelling, Texturing, Design, Programming, OpenGL, Student, Game</tags>
 	</job>
 	<job id="jasper">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Jasper</name>
 		<format>PS2 game character</format>
@@ -994,7 +1030,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Animation, Student, Game</tags>
 	</job>
 	<job id="msg">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Metal Squalid Gear</name>
 		<format>PC, IRIX</format>
@@ -1005,7 +1041,7 @@
 		<tags>3D, Modelling, Texturing, Programming, OpenGL, Student, Game, Toon Shading</tags>
 	</job>
 	<job id="br2k">
-		<status>2-live</status>
+		<status>0-hidden</status>
 		<category>Other</category>
 		<name>Boona Racer 2000</name>
 		<format>PC, Linux, IRIX</format>

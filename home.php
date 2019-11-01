@@ -43,13 +43,13 @@ shuffle($rand_jobs);
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
 						<li><a href='?p=projects'>More Projects &gt;</a></li>
-						<li><a href='?p=projects&q=commercials'>Commercials</a></li>
+						<!-- <li><a href='?p=projects&q=commercials'>Commercials</a></li>
 						<li><a href='?p=projects&q=broadcast'>Broadcast</a></li>
 						<li><a href='?p=projects&q=film'>Film</a></li>
 						<li><a href='?p=projects&q=shorts'>Shorts</a></li>
 						<li><a href='?p=projects&q=promos'>Promos</a></li>
 						<li><a href='?p=projects&q=online'>Online</a></li>
-						<li><a href='?p=projects&q=other'>Other</a></li>
+						<li><a href='?p=projects&q=other'>Other</a></li> -->
 					</ul>
 				</nav>
 			</section>

@@ -61,17 +61,17 @@ body {
 }*/
 
 a:link {
-	color: #66d9ef;
+	color: #60b7bf;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #51abbd;
+	color: #5ba0a6;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #a1f1ff;
+	color: #fff;
 	text-decoration: underline;
 }
 
@@ -404,7 +404,7 @@ hr {
 	/*padding-top: 48px;*/
 	font-family: 'Fira Sans', sans-serif;
 	color: #fff;
-	background-color: #de434a;
+	background-color: #803339;
 }
 
 .footer-wrapper {
