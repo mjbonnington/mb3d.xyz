@@ -1,4 +1,6 @@
 <?php
+$today = getdate();
+
 // Load XML database...
 $xml_file = "data/database.xml";
 if(file_exists($xml_file)) $db = simplexml_load_file($xml_file);
@@ -21,20 +23,6 @@ else $r = false;
 // Set up hyperlinks to work with standard and url_rewrite links...
 if($r) $hl = array("p" => "page/", "q" => "/", "s" => "/");
 else $hl = array("p" => "?p=", "q" => "&amp;q=", "s" => "&amp;s=");
-
-$today = getdate();
-
-// Create array containing all valid page IDs...
-foreach($db->page as $i) {
-	if($i->status > "1") $page_array[] = $i;
-
-	$valid_pages[] .= $i->attributes()->id;
-	/*foreach($i->subpage as $j) {
-		//if($j->status > "1") $page_array[i]->$subpage[] = $j;
-
-		$valid_pages[] .= $i->attributes()->id . "_" . $j->attributes()->id;
-	}*/
-}
 
 // Rewrite URLs
 /*function urlRewrite($url) {
@@ -61,6 +49,49 @@ foreach($db->page as $i) {
 	return null;
 }*/
 
+// Create array containing all valid page IDs
+foreach($db->page as $i)
+{
+	if($i->priority >= 1) $page_array[] = $i;
+	$valid_pages[] .= $i->attributes()->id;
+	// foreach($i->subpage as $j)
+	// {
+	// 	if($j->priority >= 1) $page_array[i]->$subpage[] = $j;
+	// 	$valid_pages[] .= $i->attributes()->id . "_" . $j->attributes()->id;
+	// }
+}
+
+// Get site's meta tags
+function getMetaTags() {
+	global $db, $r;
+
+	if($r) echo "\t\t<base href='" . $db->site->url . "'/><!--[if lte IE 6]></base><![endif]-->\n\n";
+
+	if($db->site->description) echo "\t\t<meta name='Description' content='" . $db->site->description . "'/>\n";
+	if($db->site->keywords) echo "\t\t<meta name='Keywords' content='" . $db->site->keywords . "'/>\n";
+	if($db->site->author) echo "\t\t<meta name='Author' content='" . $db->site->author . "'/>\n";
+}
+
+// Get site's title
+function getTitle() {
+	global $db;
+
+	echo $db->site->title;
+}
+
+// Get page's title
+function getPageTitle(&$rootpage, &$subpage, &$query) {
+	global $db;
+	$title_str = $db->site->title;
+	$separator = " | ";
+
+	if($rootpage[0]->name) $title_str .= $separator . $rootpage[0]->name;
+	if($subpage[0]->name) $title_str .= $separator . $subpage[0]->name;
+	if($query[0]->name) $title_str .= $separator . $query[0]->name;
+
+	echo $title_str;
+}
+
 // Return array index of specified key
 function getRef($search_ref, &$array) {
 	for($i=0; $i<count($array); $i++) {
@@ -69,7 +100,8 @@ function getRef($search_ref, &$array) {
 	return 0; //null;
 }
 
-// Parse a date string in the form of YYYYMM to return nicely formatted as MM/YYYY or MMM YYYY
+// Parse a date string in the form of YYYYMM to return nicely formatted as
+// MM/YYYY or MMM YYYY
 function parseDate($input_date, $long=true) {
 	$yyyy = substr($input_date, 0, 4);
 	$mm = substr($input_date, 4, 2);
@@ -78,7 +110,8 @@ function parseDate($input_date, $long=true) {
 	else return $mm . "/" . $yyyy;
 }
 
-// Get the nicest title and subtitle for a specified job, return an array containing the title and subtitle element
+// Get the nicest title and subtitle for a specified job, return an array
+// containing the title and subtitle element
 function getJobTitle(&$job) {
 	if($job->brand) {
 		$title = $job->brand;
@@ -125,36 +158,6 @@ function getJobTags(&$job, $indent=0) {
 	// echo "\t\t\t\t\t</div>\n";
 }
 
-// Get site's meta tags
-function getMetaTags() {
-	global $db, $r;
-
-	if($r) echo "\t<base href='" . $db->site->url . "'/><!--[if lte IE 6]></base><![endif]-->\n\n";
-
-	echo "\t<meta name='Description' content='" . $db->site->description . "'/>\n";
-	echo "\t<meta name='Keywords' content='" . $db->site->keywords . "'/>\n";
-	echo "\t<meta name='Author' content='" . $db->site->author . "'/>\n";
-}
-
-// Get site's title
-function getTitle() {
-	global $db;
-
-	echo $db->site->title;
-}
-
-// Get page's title
-function getPageTitle(&$rootpage, &$subpage, &$query) {
-	global $db;
-	$title_str = $db->site->title;
-
-	if($rootpage[0]->name) $title_str .= " | " . $rootpage[0]->name;
-	if($subpage[0]->name) $title_str .= " | " . $subpage[0]->name;
-	if($query[0]->name) $title_str .= " | " . $query[0]->name;
-
-	echo $title_str;
-}
-
 // Get page wrapper background
 /*function getPageBG(&$rootpage, &$subpage) {
 	$bg = false;
@@ -175,69 +178,62 @@ function getPageTitle(&$rootpage, &$subpage, &$query) {
 	else return false;
 }*/
 
+// Include page content
+function includePage($page_id) {
+	global $db, $p, $q, $r, $s, $hl, $valid_pages;
+	$page_url = "./" . $page_id . ".php";
+	//if($q) $query = "_" . $q;
+	//$page_url = "./" . $p . $query . ".php";
+
+	// Check requested page is valid...
+	if(in_array($page_id, $valid_pages))
+	{
+		// Check requested page exists...
+		if(file_exists($page_url))
+			include($page_url);
+		else
+			echo "<div class='error'>Page not found: '" . $page_id . "'</div>\n";
+	}
+	else
+		echo "<div class='error'>Invalid page: '" . $page_id . "'</div>\n";
+}
+
 // Create search box
 function createSearchBox($page_id) {
-	if($page_id == "films" || $page_id == "search") {
-		if(isset($_GET["q"]) && !empty($_GET["q"]) && $page_id == "search") {
+	if($page_id == "projects" || $page_id == "search")
+	{
+		if(isset($_GET["q"]) && !empty($_GET["q"]) && $page_id == "search")
 			$query = $_GET["q"];
-		} else {
-			$query = "Search Films";
+		else
+		{
+			$query = "Search projects";
 			$click = " onclick='this.value=\"\"'";
 		}
 
-		echo "<form id='search' method='post' action='searchform.php'>\n";
-		echo "\t<div><input type='text' name='query' value='" . $query . "'" . $click . "/></div>\n";
-		echo "</form>\n";
+		echo "\t\t\t\t<form id='search' method='post' action='searchform.php'>\n";
+		echo "\t\t\t\t\t<div><input type='text' name='query' value='" . $query . "'" . $click . "/></div>\n";
+		echo "\t\t\t\t</form>\n";
 	}
-}
-
-// Get the latest job within a category (used to display the thumbnail on the portfolio page)
-function getLatest($thumb_path, $query, $filter) {
-	global $db;
-	$max_status_level = 4;
-
-	$xml_path = $db->xpath('//job[' . $filter . ' = "' . $query . '"]');
-
-	if($xml_path) {
-	// Look for jobs with the highest status level first, if none found try reducing the level...
-		for($s=$max_status_level;$s>1;$s--) {
-			foreach($xml_path as $item) {
-				if($item->status == $s) {
-					// $img_src = $thumb_path . $item->attributes()->id . "/192x108/01.jpg";
-					$img_src = $thumb_path . $item->attributes()->id . "/192x108/01.jpg";
-					if(file_exists($img_src)) return $img_src;
-				}
-			}
-		}
-	}
-
-	return "images/placeholder-thumb.png";
-}
-
-// Recurse through XML data structure and return a long string of values (used for searching)
-function printRecursive(&$xmlObj, $depth=0) {
-	foreach($xmlObj->children() as $child) {
-		$str .= $child . "\n";
-		printRecursive($child, $depth+1);
-	}
-	return $str;
 }
 
 // Generate dynamic navigation menu
-//function createMenu(&$menu_array, $page, $bg=false) {
-function createMenu($page) {
+//function createMenu(&$menu_array, $page_id, $bg=false) {
+function createMenu($page_id) {
 	global $db, $r;
 
 	echo "\t\t\t<header class='header-compact'>\n";
-	echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo-mono.svg' width='100' alt='MB3D logo'/></a>\n";
-	echo "\t\t\t\t<!-- <a href='sitemap.php'><img src='images/menu.svg' width='24' alt='Menu'/></a> -->\n";
+	if($page_id == "home")
+		//echo "\t\t\t\t<a href='?p=sitemap'><img src='images/menu.svg' width='24' alt='Menu'/></a>\n";
+		echo "\t\t\t\t&nbsp;\n";
+	else
+		echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo-mono.svg' width='100' alt='MB3D logo'/></a>\n";
 	echo "\n";
 	echo "\t\t\t\t<nav>\n";
 	echo "\t\t\t\t\t<ul class='header-menu'>\n";
 
 	foreach($db->page as $i) {
-		if($i->status == "1-visible") {
-			if($i->attributes()->id == $page) {
+		if($i->priority == 2) {
+			if($i->attributes()->id == $page_id) {
 				echo "\t\t\t\t\t\t<li>" . $i->name . "</li>\n";
 			} else {
 				if($r) echo "\t\t\t\t\t\t<li>" . '<a href="/' . $i->attributes()->id  . '">' . $i->name . "</a></li>\n";
@@ -254,7 +250,7 @@ function createMenu($page) {
 }
 
 // Create gallery view (grid of thumbnails)
-function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshold="1", $query=null, $filter=null, $literal=false, $suppress_error_message=false) {
+function createGallery(&$grid_array, $start, $length, $thumb_path, $min_priority=1, $query=null, $filter=null, $literal=false, $suppress_error_message=false) {
 	global $hl, $p;
 
 	$max = 0;
@@ -293,7 +289,7 @@ function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshol
 		}
 
 		// Create grid...
-		if($match && $item->status > $status_threshold) {
+		if($match && $item->priority >= $min_priority) {
 			if($max>=$start && $max<$length+$start) {
 				// Generate links...
 				if($item->link) {
@@ -307,34 +303,41 @@ function createGrid(&$grid_array, $start, $length, $thumb_path, $status_threshol
 
 				// Check job thumbnail exists, otherwise use placeholder...
 				$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
-				if(!file_exists($img_src)) $img_src = "images/placeholder-thumb.png";
+				if(!file_exists($img_src))
+					$img_src = "images/placeholder-thumb.png";
 				// $img_src = $thumb_path . $item->image;
 				// if(!file_exists($img_src)) $img_src = getLatest($thumb_path, $item->name, $filter);
 
 				// Output the HTML...
-				echo "\t\t\t\t\t<div class='gallery-item'>\n";
-				echo "\t\t\t\t\t\t<a href='" . $link . "'>\n";
-				echo "\t\t\t\t\t\t\t<img src='" . $img_src . "' alt='" . $item->name . "'/>\n";
-				echo "\t\t\t\t\t\t\t<span class='gallery-item-title'>\n";
-				echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $titles[0] . "</h1>\n";
-				echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $titles[1] . "</h2>\n";
-				echo "\t\t\t\t\t\t\t</span>\n";
-				echo "\t\t\t\t\t\t</a>\n";
-				echo "\t\t\t\t\t</div>\n";
-
-				// if($item->caption) echo "\t\t<div class='caption'>" . $item->caption . "</div>\n";
+				createGalleryItem($item->name, $img_src, $link, $titles[0], $titles[1], $item->caption);
 				$n++;
 			} else $n = 0;
 			$max++;
 		}
 	}
 
+	echo "\t\t\t\t</div>\n\n";
+
 	// Print error message if no results found...
 	if($max == 0 && !$suppress_error_message) echo "<div class='error'>No results found.</div>\n";
 
-	echo "\t\t\t\t</div>\n";
-
 	return $max; // return the total number of results found - this value is used by the function createNav();
+}
+
+// Create gallery item (thumbnail)
+function createGalleryItem($name, $image, $link, $title, $subtitle, $caption=null) {
+	// Output the HTML...
+	echo "\t\t\t\t\t<div class='gallery-item'>\n";
+	echo "\t\t\t\t\t\t<a href='" . $link . "'>\n";
+	echo "\t\t\t\t\t\t\t<img src='" . $image . "' alt='" . $name . "'/>\n";
+	echo "\t\t\t\t\t\t\t<span class='gallery-item-title'>\n";
+	echo "\t\t\t\t\t\t\t\t<h1 class='title'>" . $title . "</h1>\n";
+	echo "\t\t\t\t\t\t\t\t<h2 class='subtitle'>" . $subtitle . "</h2>\n";
+	if($caption)
+		echo "\t\t\t\t\t\t\t\t<p class='caption'>" . $caption . "</p>\n";
+	echo "\t\t\t\t\t\t\t</span>\n";
+	echo "\t\t\t\t\t\t</a>\n";
+	echo "\t\t\t\t\t</div>\n";
 }
 
 // Generate page navigation
@@ -404,29 +407,50 @@ function createNav($start, $length, $max, $show_pages=true, $prev_str="Prev", $n
 		}
 
 		echo "\t\t\t\t\t</ul>\n";
-		echo "\t\t\t\t</nav>\n";
+		echo "\t\t\t\t</nav>\n\n";
 	}
 }
 
-// Include page content
-function includePage($page_id) {
-	global $db, $p, $q, $r, $s, $hl, $valid_pages;
-	$page_url = "./" . $page_id . ".php";
-	//if($q) $query = "_" . $q;
-	//$page_url = "./" . $p . $query . ".php";
+// Get the latest job within a category (used to display the thumbnail on the
+// portfolio page)
+function getLatest($thumb_path, $query, $filter) {
+	global $db;
+	$max_priority = 4;
+	$min_priority = 1;
 
-	// Check requested page is valid...
-	if(in_array($page_id, $valid_pages))
-	{
-		// Check requested page exists...
-		if(file_exists($page_url)) include($page_url);
+	$xml_path = $db->xpath('//job[' . $filter . ' = "' . $query . '"]');
 
-		else
-		{
-			echo "<div class='error'>Page not found: '" . $page_id . "'</div>\n";
+	if($xml_path) {
+	// Look for jobs with the highest priority level first, if none found try
+	// reducing the level...
+		for($s=$max_priority; $s>$min_priority; $s--) {
+			foreach($xml_path as $item) {
+				if($item->priority == $s) {
+					$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
+					if(file_exists($img_src)) return $img_src;
+				}
+			}
 		}
 	}
-	else echo "<div class='error'>Invalid page: '" . $page_id . "'</div>\n";
+
+	return "images/placeholder-thumb.png";
+}
+
+// Return the number of results of a given category (or tag, when implemented)
+function getCategoryCount($query, $filter, $min_priority=1) {
+	global $db;
+	$xml_path = $db->xpath("//job[" . $filter . "='" . $query . "' and priority>=" . $min_priority . "]");
+	return count($xml_path);
+}
+
+// Recurse through XML data structure and return a long string of values
+// (used for searching)
+function printRecursive(&$xmlObj, $depth=0) {
+	foreach($xmlObj->children() as $child) {
+		$str .= $child . "\n";
+		printRecursive($child, $depth+1);
+	}
+	return $str;
 }
 
 // Generate footer links
@@ -434,7 +458,7 @@ function createFooterLinks(&$menu_array) {
 	global $hl;
 
 	foreach($menu_array as $menu) {
-		if($menu->status == "2-footer") {
+		if($menu->priority == 1) {
 			if($menu->link) $link = $menu->link;
 			else $link = $hl["p"] . $menu->attributes()->id;
 
@@ -442,4 +466,5 @@ function createFooterLinks(&$menu_array) {
 		}
 	}
 }
+
 ?>

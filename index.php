@@ -20,10 +20,12 @@ $page_key = getRef($_SESSION["prev_page_key"], $db->pages->page);
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
-		<meta charset='UTF-8'/>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
 		<link rel='stylesheet' href='style.css'/>
 		<link rel='icon' href='images/favicon.png' type='image/png'/>
+
+		<meta charset='UTF-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<?php getMetaTags(); ?>
 
 		<title><?php getPageTitle($rootpage, $subpage, $query); ?></title>
 	</head>

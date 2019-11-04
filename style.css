@@ -131,6 +131,30 @@ hr {
 	background: #333;
 }
 
+form {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	/*margin: 10px 0;*/
+	padding: 1ex 0.5em;
+	border: 1px solid #333;
+	background: #000;
+	color: #666;
+	font-family: 'Fira Sans', sans-serif;
+	/*height: 16px;
+	line-height: 16px;
+	font-size: 9pt;*/
+}
+
+input:hover {
+	border: 1px solid #666;
+	color: #ccc;
+	/*background: #FFF;*/
+}
+
 .header {
 	display: flex;
 	flex-direction: column;
@@ -386,6 +410,20 @@ hr {
 	text-overflow: ellipsis;
 }
 
+.caption {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1.5ex 1em;
+	border: none;
+	border-radius: 0 0 0 10px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 60%;
+	background: #fff;
+	/*opacity: 0.5;*/
+	color: #000;
+}
+
 .gallery-nav {
 	display: flex;
 	justify-content: center;
@@ -393,6 +431,22 @@ hr {
 	padding: 48px 24px;
 	/*color: #999;
 	background-color: #444;*/
+}
+
+.searchbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 24px;
+	/*color: #999;
+	background-color: #444;*/
+}
+
+.searchbar input {
+	background: url(images/search.svg) no-repeat scroll 6px 8.5px;
+	/*background-image: url(images/search.svg);
+	background-repeat: no-repeat;*/
+	text-indent: 16px;
 }
 
 .error {

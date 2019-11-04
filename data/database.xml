@@ -1,92 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<site>
-		<title>MB3D</title>
-		<description>London, UK based visual effects artist specialising in 3D modelling, design, lighting, and rendering.</description>
-		<keywords>3d, animation, animator, artist, cg, cgi, computer animation, computer generated imagery, computer graphics, designer, developer, freelance, freelancer, graphic design, lighter, lighting, lookdev, look development, modeler, modeller, pipeline, programmer, reel, renderer, rendering, scripting, showreel, vfx, vfx supervisor, video games, visual effects, visualisation</keywords>
-		<author>Michael Bonnington</author>
 		<url rewrite="false">http://mb3d.xyz/</url>
+		<title>MB3D</title>
+		<author>Michael Bonnington</author>
 	</site>
 
 	<page id="home">
 		<name>Home</name>
-		<status>1-visible</status>
+		<priority>2</priority>
 	</page>
 	<page id="reel">
 		<name>Reel</name>
-		<status>1-visible</status>
+		<priority>2</priority>
 	</page>
 	<page id="projects">
 		<name>Projects</name>
-		<status>1-visible</status>
-	</page>
-
-	<page id="films">
-		<name>Films</name>
-		<status>3-visible</status>
-		<colour>#d0a32d</colour>
+		<priority>2</priority>
 		<subpage id="commercials">
 			<name>Commercials</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
 		<subpage id="broadcast">
 			<name>Broadcast</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
 		<subpage id="film">
 			<name>Film</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
 		<subpage id="shorts">
 			<name>Shorts</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
 		<subpage id="promos">
 			<name>Promos</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
 		<subpage id="online">
 			<name>Online</name>
-			<status>3-visible</status>
+			<priority>2</priority>
 			<link>auto</link>
 		</subpage>
-		<subpage id="spacer">
+		<subpage id="other">
+			<name>Other</name>
+			<priority>2</priority>
+			<link>auto</link>
 		</subpage>
 	</page>
 
 	<page id="contact">
 		<name>Contact</name>
-		<status>2-footer</status>
+		<priority>1</priority>
 	</page>
 	<page id="job">
 		<name>Job</name>
-		<status>0-hidden</status>
+		<priority>0</priority>
 	</page>
 	<page id="search">
 		<name>Search</name>
-		<status>0-hidden</status>
+		<priority>0</priority>
 	</page>
 	<page id="sitemap">
 		<name>Sitemap</name>
-		<status>2-footer</status>
+		<priority>1</priority>
 	</page>
 	<page id="legal">
 		<name>Legal</name>
-		<status>2-footer</status>
+		<priority>1</priority>
 	</page>
 	<page id="debug">
 		<name>Debug</name>
-		<status>0-hidden</status>
+		<priority>0</priority>
 	</page>
 
 	<job id="unique-job-id">
 		<name>Template Job</name>
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials, Broadcast, Film, Shorts, Promos, Online, Other</category>
 		<studio>Name of production studio</studio>
 		<agency>Name of agency</agency>
@@ -107,7 +102,7 @@
 	</job>
 	<job id="knorr-butterfly">
 		<name>Butterfly</name>
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<studio>UNIT</studio>
 		<agency>Mullen Lowe</agency>
@@ -123,7 +118,7 @@
 	</job>
 	<job id="rbl-rethink-remembrance">
 		<name>Rethink Remembrance</name>
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<format>30&amp;quot; TV commercial, online</format>
 		<studio>Gramercy Park Studios</studio>
@@ -137,7 +132,7 @@
 		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="sensodyne-tag">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Endframe tag</name>
 		<format></format>
@@ -149,7 +144,7 @@
 		<tags>3D, Modelling, Lookdev, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="paradontax">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Paradontax</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -161,20 +156,21 @@
 		<tags>3D, Modelling, Matchmove, Lookdev, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="c5-big-brother">
-		<status>0-hidden</status>
+		<priority>2</priority>
 		<category>Broadcast</category>
 		<name>Big Brother</name>
 		<format>30&amp;quot; teaser trailer</format>
 		<client>Channel 5</client>
-		<agency></agency>
 		<studio>Gramercy Park Studios</studio>
 		<date>201605</date>
-		<description></description>
-		<movie1>c5_big_brother_30</movie1>
-		<tags>3D, Matchmove, Lookdev, Lighting, Rendering</tags>
+		<description link="media/c5-big-brother-description.md"/>
+		<movie link="media/c5-big-brother-h264-1080p.mp4"/>
+		<image link="media/c5-big-brother-sh010.jpg"/>
+		<tags>Matchmove, Layout, Lighting</tags>
+		<tagssw>Maya, Redshift</tagssw>
 	</job>
 	<job id="butterfinger-bolder-than-bold">
-		<status>3-featured</status>
+		<priority>4</priority>
 		<category>Commercials</category>
 		<name>Bolder Than Bold</name>
 		<caption>Superbowl 2016</caption>
@@ -185,14 +181,14 @@
 		<agency>Santo</agency>
 		<studio>Gramercy Park Studios</studio>
 		<credit role="Director">Armando Bo</credit>
-		<description link=""/>
+		<description link="media/butterfinger-bolder-than-bold-description.md"/>
 		<movie link="media/butterfinger-bolder-than-bold-dir-cut-h264-1080p.mp4"/>
 		<image link="media/butterfinger-bolder-than-bold-sh060.jpg"/>
 		<tags>Creature, Layout, Modelling, Lookdev, Lighting, Groom, Comp</tags>
 		<tagssw>Maya, Xgen, Redshift, Nuke</tagssw>
 	</job>
 	<job id="heinz-beanz">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Baked Beans</name>
 		<format></format>
@@ -208,7 +204,7 @@
 		<tags>3D, Modelling, Lookdev, Texturing, Lighting, Compositing, Photorealism</tags>
 	</job>
 	<job id="listerine-advanced-white">
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Commercials</category>
 		<name>Advanced White</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -224,24 +220,23 @@
 		<tagssw>Maya, V-Ray, Nuke</tagssw>
 	</job>
 	<job id="homebase-xmas">
-		<status>0-hidden</status>
+		<priority>2</priority>
 		<category>Commercials</category>
 		<name>Homebase Xmas</name>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Homebase</client>
-		<agency></agency>
+		<agency>Leo Burnett</agency>
 		<studio>Gramercy Park Studios</studio>
 		<date>201411</date>
-		<description></description>
-		<movie1>homebase_xmas_30</movie1>
-		<image1>homebase_xmas_01</image1>
-		<image2>homebase_xmas_02</image2>
-		<image3>homebase_xmas_03</image3>
-		<tags>3D, Matchmove, Modelling, Lookdev, Texturing, Lighting, Compositing, Photorealism</tags>
+		<description link="media/homebase-xmas-description.md"/>
+		<movie link="media/homebase-xmas-h264-1080p.mp4"/>
+		<image link="media/homebase-xmas-sh110.jpg"/>
+		<tags>Matchmove, Modelling, Lookdev, Lighting, Comp</tags>
+		<tagssw>Maya, Photoshop, PFTrack, Nuke</tagssw>
 	</job>
 	<job id="the-louvre">
 		<name>The Louvre Installation</name>
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Other</category>
 		<studio>Gramercy Park Studios</studio>
 		<client>Mark Lewis</client>
@@ -253,7 +248,7 @@
 		<tagssw>Maya, Photoshop, Photoscan, Nuke</tagssw>
 	</job>
 	<job id="betfair-world-cup-cashout">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>World Cup Cashout</name>
 		<date>201406</date>
@@ -269,10 +264,9 @@
 		<tagssw>Maya, V-Ray, Nuke</tagssw>
 	</job>
 	<job id="betfair-this-is-play">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>This Is Play</name>
-		<caption>World Cup 2014</caption>
 		<date>201406</date>
 		<format>30&amp;quot; TV commercial</format>
 		<client>Betfair</client>
@@ -287,7 +281,7 @@
 		<tagssw>Maya, V-Ray, PFTrack, Nuke</tagssw>
 	</job>
 	<job id="betfair-lets-play-nj">
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Commercials</category>
 		<name>Let's Play NJ</name>
 		<date>201312</date>
@@ -303,7 +297,7 @@
 		<tagssw>Maya, V-Ray, After Effects, Nuke</tagssw>
 	</job>
 	<job id="ford-vw-cg-breakdown">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Other</category>
 		<name>CG breakdown</name>
 		<brand>Ford</brand>
@@ -316,7 +310,7 @@
 		<tagssw>Maya, V-Ray, Photoshop, PFTrack, Nuke</tagssw>
 	</job>
 	<job id="baron-otard-xo">
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Commercials</category>
 		<name>Baron Otard XO</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -331,7 +325,7 @@
 		<tagssw>Maya, V-Ray, Nuke</tagssw>
 	</job>
 	<job id="boss-orange-packshot">
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Commercials</category>
 		<name>Boss Orange</name>
 		<format>Packshot</format>
@@ -345,7 +339,7 @@
 		<tagssw>Maya, mentalray</tagssw>
 	</job>
 	<job id="irobot">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>iRobot</name>
 		<format>5x 15&amp;quot; web commercials</format>
@@ -361,7 +355,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="itv-im-a-celeb">
-		<status>2-live</status>
+		<priority>3</priority>
 		<category>Broadcast</category>
 		<name>I'm a Celebrity - Get Me Out Of Here!</name>
 		<format>4x 5-10&amp;quot; bumpers</format>
@@ -376,7 +370,7 @@
 		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="waiting">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Promos</category>
 		<name>I'll Be Waiting</name>
 		<format>Music Video</format>
@@ -391,7 +385,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Editing</tags>
 	</job>
 	<job id="sun-race">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<brand>Sun</brand>
 		<name>Race</name>
@@ -407,7 +401,7 @@
 		<tags>3D, Pre-viz, Modelling, Animation</tags>
 	</job>
 	<job id="hp7a-vfx">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Film</category>
 		<brand>Harry Potter</brand>
 		<name>and the Deathly Hallows</name>
@@ -420,7 +414,7 @@
 		<tags>Modelling, Lookdev, Lighting, Creature</tags>
 	</job>
 	<job id="tuborg-music-idents">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>Music Idents</name>
 		<format>4x 15&amp;quot; TV idents</format>
@@ -437,7 +431,7 @@
 		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="african-football">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Broadcast</category>
 		<name>African Football</name>
 		<format>30&amp;quot; trailer</format>
@@ -448,7 +442,7 @@
 		<date>200912</date>
 	</job>
 	<job id="turning">
-		<status>0-hidden</status>
+		<priority>2</priority>
 		<category>Shorts</category>
 		<name>Turning</name>
 		<caption>BAFTA nominated</caption>
@@ -456,15 +450,15 @@
 		<agency>Rokkit/Stink</agency>
 		<director>Karni + Saul</director>
 		<date>200911</date>
-		<description>In this beautifully realised short film from directing duo Karni and Saul, a young boy receives three old ladies in his mother's sitting room on his sixth birthday. The ten minute film uses a combination of live action with both stop-frame and CG animation to deliver its dark and dreamlike vision of hazy childhood memory and imagination. My contribution to this was a scene where an elaborately wrapped present scuttles across the floor, spider-like, with ribbons as legs. 'Turning' was nominated for Best Short Film in the 2011 BAFTA awards.</description>
 		<url>http://www.bbc.co.uk/filmnetwork/films/p00cld4n</url>
-		<movie1>turning_present</movie1>
-		<image1>turning_01</image1>
-		<image2>turning_02</image2>
-		<tags>3D, Animation, Rigging, Lighting, Rendering, Matchmove</tags>
+		<description link="media/turning-description.md"/>
+		<movie link="media/turning-present-h264.mp4"/>
+		<image link="media/turning-present.jpg"/>
+		<tags>Animation, Rigging, Lighting, Matchmove</tags>
+		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="f1-rocks">
-		<status>2-live</status>
+		<priority>2</priority>
 		<category>Broadcast</category>
 		<name>F1 Rocks</name>
 		<format>30&amp;quot; TV title sequence</format>
@@ -480,7 +474,7 @@
 		<tagssw>Maya, After Effects</tagssw>
 	</job>
 	<job id="shu-uemura">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Shu Uemura Bento Box</name>
 		<format>Product demo</format>
@@ -495,7 +489,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="hp6-titles">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Film</category>
 		<brand>Harry Potter</brand>
 		<name>and the Half-Blood Prince</name>
@@ -509,7 +503,7 @@
 		<tags>3D, Animation, Procedural Shaders, Fluids, Compositing</tags>
 	</job>
 	<job id="coi-highway-code">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Broadcast</category>
 		<name>Highway Code</name>
 		<format>40&amp;quot; Public Information Film</format>
@@ -519,7 +513,7 @@
 		<date>200907</date>
 	</job>
 	<job id="cheri-titles">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Film</category>
 		<name>Cheri</name>
 		<format>Feature film titles</format>
@@ -530,7 +524,7 @@
 		<tags>3D, Fluids</tags>
 	</job>
 	<job id="kswiss-mtv">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Remaster the Classic</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -546,7 +540,7 @@
 		<tags>3D, Animation, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="rbs-idents">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>C4 Idents</name>
 		<format>6x 5-15&amp;quot; idents</format>
@@ -562,7 +556,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Compositing, Toon Shading</tags>
 	</job>
 	<job id="samsung-attraction">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Attraction</name>
 		<format>2x 30&amp;quot; TV commercials</format>
@@ -579,7 +573,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Photorealism</tags>
 	</job>
 	<job id="market-kitchen">
-		<status>0-hidden</status>
+		<priority>1</priority>
 		<category>Broadcast</category>
 		<name>Market Kitchen</name>
 		<format>TV titles</format>
@@ -595,7 +589,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="halfords-santa">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Santa</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -612,7 +606,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="cdm-gorilla">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Gorilla</name>
 		<format>90&amp;quot; TV commercial</format>
@@ -629,7 +623,7 @@
 		<tags>3D, Modelling, Texturing</tags>
 	</job>
 	<job id="davidcairnsphoto">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Web</category>
 		<name>David Cairns: Photographer</name>
 		<format>Flash web site</format>
@@ -640,7 +634,7 @@
 		<tags>HTML, Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="fairy-sparkle">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Sparkle</name>
 		<format>20&amp;quot; TV commercial</format>
@@ -656,7 +650,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Rendering</tags>
 	</job>
 	<job id="coco-pops-cupboard">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>Cupboard</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -673,7 +667,7 @@
 		<tagssw>Maya, mentalray, Boujou, Photoshop, After Effects</tagssw>
 	</job>
 	<job id="delinquent">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Web</category>
 		<name>Delinquent</name>
 		<format>Flash web site</format>
@@ -684,7 +678,7 @@
 		<tags>Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="britishlibrary">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>British Library Sound Archive</name>
 		<format>Interactive display</format>
@@ -698,7 +692,7 @@
 		<tags>3D, Modelling, Flash</tags>
 	</job>
 	<job id="mini-lasers">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>Lasers</name>
 		<format>Projection</format>
@@ -715,7 +709,7 @@
 		<tagssw>Maya, mentalray, After Effects</tagssw>
 	</job>
 	<job id="ribena-currant-affairs">
-		<status>3-featured</status>
+		<priority>3</priority>
 		<category>Commercials</category>
 		<name>Currant Affairs</name>
 		<format>30&amp;quot; TV/cinema commercial</format>
@@ -731,7 +725,7 @@
 		<tagssw>Maya, mentalray, Boujou, Photoshop, After Effects</tagssw>
 	</job>
 	<job id="stickleback">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Web</category>
 		<name>Stickleback Music</name>
 		<format>Flash web site</format>
@@ -742,7 +736,7 @@
 		<tags>Flash, Web Design, Programming, Dynamic XML</tags>
 	</job>
 	<job id="xbox360-sploj">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Sploj</name>
 		<format>Web</format>
@@ -758,7 +752,7 @@
 		<tags>3D, Lighting, Rendering, Compositing</tags>
 	</job>
 	<job id="insidestory">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Web</category>
 		<name>Inside Story: Physics in Medicine</name>
 		<format>Flash web site</format>
@@ -771,7 +765,7 @@
 		<tags>HTML, Flash, Game, Web Design, Programming</tags>
 	</job>
 	<job id="ribena-liquidator">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Liquidator</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
@@ -788,7 +782,7 @@
 		<tags>3D, Modelling, Animation, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
 	<job id="ribena-mud">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Mud on the Tracks</name>
 		<format>40&amp;quot;, 30&amp;quot; and 10&amp;quot; TV/cinema commercials</format>
@@ -806,7 +800,7 @@
 		<tags>3D, Modelling, Rigging, Matchmove, HDR, Lighting, Rendering, Compositing, Photorealism</tags>
 	</job>
 	<job id="payback-parade">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Parade</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -823,7 +817,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="the-usual-suspect">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Shorts</category>
 		<name>The Usual Suspect</name>
 		<format>Short film</format>
@@ -838,7 +832,7 @@
 		<tags>3D, Particles, Compositing, Toon Shading</tags>
 	</job>
 	<job id="killzone">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Killzone</name>
 		<format>Shockwave web site</format>
@@ -851,7 +845,7 @@
 		<tags>3D, Texturing, Animation, Game, Shockwave</tags>
 	</job>
 	<job id="payback-winner">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Winner</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -868,7 +862,7 @@
 		<tags>3D, Modelling, Texturing, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="kumala-smooth">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Smooth</name>
 		<format>20&amp;quot; TV commercial</format>
@@ -886,7 +880,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Compositing</tags>
 	</job>
 	<job id="kumala-idents">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>ITV2 Movies</name>
 		<format>6x 10-15&amp;quot; idents</format>
@@ -903,7 +897,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Rendering, Photorealism</tags>
 	</job>
 	<job id="payback-starpramie">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Starpramie</name>
 		<format>30&amp;quot; TV commercial</format>
@@ -920,7 +914,7 @@
 		<tags>3D, Modelling, Texturing, Particles, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="chewits-auditions">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Auditions</name>
 		<format>40&amp;quot; TV/cinema commercial</format>
@@ -936,7 +930,7 @@
 		<tags>3D, Modelling, Texturing</tags>
 	</job>
 	<job id="payback-blueplanet">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Commercials</category>
 		<name>Blue Planet</name>
 		<format>30&amp;quot; + 7&amp;quot; TV commercial</format>
@@ -954,7 +948,7 @@
 		<tags>3D, Modelling, Texturing, Animation, Lighting, Compositing, Toon Shading</tags>
 	</job>
 	<job id="getaway">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Games</category>
 		<name>The Getaway</name>
 		<format>PS2</format>
@@ -968,7 +962,7 @@
 		<tags>Game, 3D, Modelling, Texturing</tags>
 	</job>
 	<job id="pow">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Games</category>
 		<name>Prisoner of War</name>
 		<format>PS2, Xbox, PC</format>
@@ -982,7 +976,7 @@
 		<tags>Game, Cutscenes, Scripting, Design, Editing</tags>
 	</job>
 	<job id="tif2002">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Games</category>
 		<name>This Is Football 2002</name>
 		<format>PS2</format>
@@ -995,7 +989,7 @@
 		<tags>Game, 3D, Modelling, Texturing</tags>
 	</job>
 	<job id="the-last-bond">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Shorts</category>
 		<name>The Last Bond</name>
 		<format>Short film</format>
@@ -1009,7 +1003,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Facial Animation, Animation, Lighting, Editing, Toon Shading, Student</tags>
 	</job>
 	<job id="boonataxi">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Boona Taxi</name>
 		<format>PC, IRIX</format>
@@ -1019,7 +1013,7 @@
 		<tags>3D, Modelling, Texturing, Design, Programming, OpenGL, Student, Game</tags>
 	</job>
 	<job id="jasper">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Jasper</name>
 		<format>PS2 game character</format>
@@ -1030,7 +1024,7 @@
 		<tags>3D, Modelling, Texturing, Rigging, Animation, Student, Game</tags>
 	</job>
 	<job id="msg">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Metal Squalid Gear</name>
 		<format>PC, IRIX</format>
@@ -1041,7 +1035,7 @@
 		<tags>3D, Modelling, Texturing, Programming, OpenGL, Student, Game, Toon Shading</tags>
 	</job>
 	<job id="br2k">
-		<status>0-hidden</status>
+		<priority>0</priority>
 		<category>Other</category>
 		<name>Boona Racer 2000</name>
 		<format>PC, Linux, IRIX</format>

@@ -4,7 +4,7 @@ $rand_jobs = array();
 $n = (isset($_GET['n']) && !empty($_GET['n'])) ? $_GET['n'] : 4;
 
 for($i=0; $i<count($db->job); $i++) {
-	if($db->job[$i]->status > "3") $feat_jobs[] = $i;
+	if($db->job[$i]->priority >= 3) $feat_jobs[] = $i;
 }
 
 if($n > count($feat_jobs)) $n = count($feat_jobs);
@@ -37,8 +37,7 @@ shuffle($rand_jobs);
 			</section>
 
 			<section class='gallery-wrapper'>
-
-<?php $max_items = createGrid($db->job, $s, 3, "media/", "3"); ?>
+<?php $max_items = createGallery($db->job, $s, 3, "media/", "3"); ?>
 
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
