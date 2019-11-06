@@ -1,15 +1,17 @@
 <?php
-$feat_jobs = array();
+/*$feat_jobs = array();
 $rand_jobs = array();
-$n = (isset($_GET['n']) && !empty($_GET['n'])) ? $_GET['n'] : 4;
+$n = (isset($_GET['n']) && !empty($_GET['n'])) ? $_GET['n'] : 3;
 
 for($i=0; $i<count($db->job); $i++) {
-	if($db->job[$i]->priority >= 3) $feat_jobs[] = $i;
+	if($db->job[$i]->priority >= 3)
+		$feat_jobs[] = $i;
 }
 
-if($n > count($feat_jobs)) $n = count($feat_jobs);
+if($n > count($feat_jobs))
+	$n = count($feat_jobs);
 $rand_jobs = array_slice($feat_jobs, 1, count($feat_jobs));
-shuffle($rand_jobs);
+shuffle($rand_jobs);*/
 ?>
 
 			<header class='header'>
@@ -31,7 +33,8 @@ shuffle($rand_jobs);
 
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
-						<li><a href='?p=reel'>Showreel &gt;</a></li>
+						<!-- <li><a href='<?php genLink("reel"); ?>'>Showreel Breakdown &gt;</a></li> -->
+						<li><a href='?p=reel'>Showreel Breakdown &gt;</a></li>
 					</ul>
 				</nav>
 			</section>
@@ -41,6 +44,7 @@ shuffle($rand_jobs);
 
 				<nav class='gallery-nav'>
 					<ul class='header-menu'>
+						<!-- <li><a href='<?php genLink("projects"); ?>'>More Projects &gt;</a></li> -->
 						<li><a href='?p=projects'>More Projects &gt;</a></li>
 						<!-- <li><a href='?p=projects&q=commercials'>Commercials</a></li>
 						<li><a href='?p=projects&q=broadcast'>Broadcast</a></li>

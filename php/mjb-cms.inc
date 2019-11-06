@@ -127,7 +127,9 @@ function getJobTitle(&$job) {
 	return [$title, $subtitle];
 }
 
-// Output HTML for a job's tags. Indentation not working. This can be cleaned up a lot
+// Output HTML for a job's tags. Indentation not working.
+// This can be cleaned up a lot
+// TODO: make job param optional and if omitted return all tags
 function getJobTags(&$job, $indent=0) {
 	// Create indentation
 	for($i=0; $i<$indent; $s++) {
@@ -178,6 +180,18 @@ function getJobTags(&$job, $indent=0) {
 	else return false;
 }*/
 
+// Generate URL rewrite-compatible hyperlinks (currently page links only)
+function genLink($page_id) {
+	global $r;
+
+	if($r)
+		$link_str = "/" . $page_id;
+	else
+		$link_str = "?p=" . $page_id;
+
+	return $link_str;
+}
+
 // Include page content
 function includePage($page_id) {
 	global $db, $p, $q, $r, $s, $hl, $valid_pages;
@@ -226,19 +240,35 @@ function createMenu($page_id) {
 		//echo "\t\t\t\t<a href='?p=sitemap'><img src='images/menu.svg' width='24' alt='Menu'/></a>\n";
 		echo "\t\t\t\t&nbsp;\n";
 	else
-		echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo-mono.svg' width='100' alt='MB3D logo'/></a>\n";
+		echo "\t\t\t\t<a href='index.php'><img src='images/mb3d-logo-mono.svg' width='100' alt='" . $db->site->title . " home'/></a>\n";
 	echo "\n";
 	echo "\t\t\t\t<nav>\n";
 	echo "\t\t\t\t\t<ul class='header-menu'>\n";
 
 	foreach($db->page as $i) {
 		if($i->priority == 2) {
+			// Only create a link if this isn't the page we're on
 			if($i->attributes()->id == $page_id) {
-				echo "\t\t\t\t\t\t<li>" . $i->name . "</li>\n";
+				$link_open = "";
+				$link_close = "";
 			} else {
-				if($r) echo "\t\t\t\t\t\t<li>" . '<a href="/' . $i->attributes()->id  . '">' . $i->name . "</a></li>\n";
-				else echo "\t\t\t\t\t\t<li>" . '<a href="?p=' . $i->attributes()->id  . '">' . $i->name . "</a></li>\n";
+				$link_open = "<a href='" . genLink($i->attributes()->id) . "'>";
+				$link_close = "</a>";
 			}
+			// Create text only (default), image only, and combined links
+			switch($i->type) {
+				case "both":
+					$link_content = "<img src='" . $i->image->attributes()->link . "'/>" . $i->name;
+					break;
+				case "image":
+					$link_content = "<img src='" . $i->image->attributes()->link . "' alt='" . $i->name . "'/>";
+					break;
+				case "text":
+				default:
+					$link_content = $i->name;
+			}
+			// Generate menu item markup
+			echo "\t\t\t\t\t\t<li>" . $link_open . $link_content . $link_close . "</li>\n";
 		}
 		$valid_pages[] = $i->attributes()->id;
 	}
@@ -304,6 +334,8 @@ function createGallery(&$grid_array, $start, $length, $thumb_path, $min_priority
 				// Check job thumbnail exists, otherwise use placeholder...
 				$img_src = $thumb_path . $item->attributes()->id . "-thumb.jpg";
 				if(!file_exists($img_src))
+					$img_src = $item->image->attributes()->link;
+				if(!file_exists($img_src))
 					$img_src = "images/placeholder-thumb.png";
 				// $img_src = $thumb_path . $item->image;
 				// if(!file_exists($img_src)) $img_src = getLatest($thumb_path, $item->name, $filter);
@@ -319,7 +351,8 @@ function createGallery(&$grid_array, $start, $length, $thumb_path, $min_priority
 	echo "\t\t\t\t</div>\n\n";
 
 	// Print error message if no results found...
-	if($max == 0 && !$suppress_error_message) echo "<div class='error'>No results found.</div>\n";
+	if($max == 0 && !$suppress_error_message)
+		echo "<div class='error'>No results found.</div>\n";
 
 	return $max; // return the total number of results found - this value is used by the function createNav();
 }
@@ -355,9 +388,9 @@ function createNav($start, $length, $max, $show_pages=true, $prev_str="Prev", $n
 		$link_base .= "&amp;s=";
 	}
 
-	// Only create navigation if there are more items than can be displayed on one page...
-	if($max > $length) {
-
+	// Only create navigation if there are more items than can be displayed on
+	// one page, and the first item is within the correct range...
+	if($max > $length && $start < $max) {
 		echo "\t\t\t\t<nav class='gallery-nav'>\n";
 		echo "\t\t\t\t\t<ul class='header-menu'>\n";
 
@@ -445,8 +478,8 @@ function getCategoryCount($query, $filter, $min_priority=1) {
 
 // Recurse through XML data structure and return a long string of values
 // (used for searching)
-function printRecursive(&$xmlObj, $depth=0) {
-	foreach($xmlObj->children() as $child) {
+function printRecursive(&$xml_obj, $depth=0) {
+	foreach($xml_obj->children() as $child) {
 		$str .= $child . "\n";
 		printRecursive($child, $depth+1);
 	}

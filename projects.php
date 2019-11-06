@@ -12,7 +12,7 @@ if($q) {
 	else {
 		echo "\t\t\t<section class='gallery-wrapper'>\n";
 		$max_items = createGallery($db->job, $s, $num_items, "media/", $priority_threshold, (string)$page_path[0]->name, "category", false);
-		createNav($s, $num_items, $max_items, false);
+		createNav($s, $num_items, $max_items, true);
 		echo "\t\t\t</section>\n";
 	}
 

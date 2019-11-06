@@ -22,7 +22,9 @@ else
 	fclose($fh);
 
 	// If that fails, read description from inline tag contents
-	if(!$description) $description = $job->description;
+	if(!$description)
+		// $description = "\t\t\t\t\t<p>" . $job->description . "</p>";
+		$description = $job->description;
 
 	// Generate markup...
 
@@ -50,7 +52,7 @@ else
 	// Description...
 	if($description != "") {
 		echo "\t\t\t\t<div class='body-text'>\n";
-		echo "\t\t\t\t\t" . $description . "\n";
+		echo $description . "\n";
 		echo "\t\t\t\t</div>\n";
 	}
 

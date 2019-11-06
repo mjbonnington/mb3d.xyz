@@ -8,6 +8,6 @@ echo "\t\t\t</section>\n\n";
 
 echo "\t\t\t<section class='gallery-wrapper'>\n";
 $max_items = createGallery($db->job, $s, $num_items, "media/", $priority_threshold, $q);
-createNav($s, $num_items, $max_items, true);
+createNav($s, $num_items, $max_items, false);
 echo "\t\t\t</section>\n";
 ?>

@@ -244,6 +244,12 @@ input:hover {
 	margin-right: 0;
 }
 
+.header-menu > li img {
+	/*width: 11px;*/
+	height: 11px;
+	margin: 0 4px;
+}
+
 .section-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -261,8 +267,15 @@ input:hover {
 	margin-bottom: 0.75em;
 }
 
-.body-text p:last-of-type {
+/*.body-text p:last-of-type {
 	margin-bottom: 0;
+}*/
+
+.body-text h1, .body-text h2, .body-text h3, 
+.body-text h4, .body-text h5, .body-text h6  {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: normal;
+	margin-bottom: 0.25em;
 }
 
 .body-text span.first-word {
